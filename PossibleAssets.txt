@@ -22,7 +22,7 @@ https://opengameart.org/content/book-pages
 https://opengameart.org/content/crossbow-shot
 https://opengameart.org/content/female-rpg-character-voice-pack
 https://opengameart.org/content/fast-hammer-sfx
-https://opengameart.org/content/win-sound-effect
+https://opengameart.org/content/win-sound-effect x
 https://opengameart.org/content/dynamite-sound-effect
 https://opengameart.org/content/steampunk-fantasy-voices
 https://opengameart.org/content/death-sounds-0
@@ -56,3 +56,5 @@ https://www.midiworld.com/earlymus.htm
 https://www.looperman.com/loops/detail/133676/war-drums-high-quality-loop-by-yogeshst-130bpm-cinematic-drum-loop
 https://www.looperman.com/loops/detail/76145/war-drums-by-danke-free-140bpm-cinematic-drum-loop
 https://www.looperman.com/loops/detail/64555/war-drums-by-producerh-free-130bpm-hip-hop-drum-loop
+
+https://opengameart.org/content/old-cover-art-sketch
