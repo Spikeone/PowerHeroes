@@ -1,1 +1,1 @@
-powershell .\PowerHeroes.ps1 -Quickstart $True
+powershell .\PowerHeroes.ps1 -Quickstart $True -Debug $True
