@@ -1,0 +1,72 @@
+!ON_START|1|1
+
+// Goldmines
+@ADD_BUILDING|1|2|7|1|2|3
+@ADD_BUILDING|1|2|7|1|7|4
+
+// Sawmills
+@ADD_BUILDING|1|2|8|1|5|3
+@ADD_BUILDING|1|2|8|1|8|3
+@ADD_BUILDING|1|2|8|1|10|3
+
+// Towers
+@ADD_BUILDING|1|2|12|1|4|4
+@ADD_BUILDING|1|2|12|1|7|3
+@ADD_BUILDING|1|2|12|1|9|5
+@ADD_BUILDING|1|2|12|1|1|4
+
+// Barracks
+@ADD_BUILDING|1|2|9|1|3|3
+
+// Archerrange
+@ADD_BUILDING|1|2|10|1|6|4
+
+// Farm
+@ADD_BUILDING|1|2|4|1|10|6
+
+// Field
+@ADD_BUILDING|1|2|5|1|10|5
+@ADD_BUILDING|1|2|5|1|11|5
+@ADD_BUILDING|1|2|5|1|11|6
+@ADD_BUILDING|1|2|5|1|11|7
+@ADD_BUILDING|1|2|5|1|10|7
+@ADD_BUILDING|1|2|5|1|9|7
+@ADD_BUILDING|1|2|5|1|9|6
+
+// Well
+@ADD_BUILDING|1|2|6|1|12|6
+
+// small houses
+@ADD_BUILDING|1|2|1|1|4|3
+@ADD_BUILDING|1|2|1|1|5|4
+@ADD_BUILDING|1|2|1|1|9|4
+
+// Medium
+@ADD_BUILDING|1|2|2|0.75|13|6
+@ADD_BUILDING|1|2|2|1|5|1
+
+//Large
+@ADD_BUILDING|1|2|3|0.5|8|5
+@ADD_BUILDING|1|2|3|0.25|1|5
+
+// Armies
+@ADD_ARMY|1|2|1|1|0|4|2
+
+@ADD_ARMY|1|2|1|0|0|2|4
+@ADD_ARMY|1|2|1|0|0|1|5
+@ADD_ARMY|1|2|1|0|0|1|7
+@ADD_ARMY|1|2|1|0|0|6|3
+@ADD_ARMY|1|2|1|0|0|12|10
+@ADD_ARMY|1|2|1|0|0|14|12
+@ADD_ARMY|1|2|1|0|0|8|4
+@ADD_ARMY|1|2|1|0|0|10|4
+@ADD_ARMY|1|2|1|0|0|8|6
+@ADD_ARMY|1|2|1|0|0|12|8
+@ADD_ARMY|1|2|1|0|0|14|7
+@ADD_ARMY|1|2|1|0|0|2|8
+
+@SHOW_TEXT|1|We scouted ahead a little but this seems to be a tough journey. \n \n We have alreay spotted a large number of hostile armies so we may first build a camp here and stock up on resources so we can recruit more men. \n \n Task: Move further north. \n \n Hint: You may build an archerrange and recruit some archer regiments for your armies.
+
+// Player 2 lost its HQ, win
+!ON_BUILDING_LOST|2|2|2|0|1
+@GAME_WIN|2

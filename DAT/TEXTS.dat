@@ -1,0 +1,83 @@
+[LICENSE]
+--- Programming ---
+Spikeone
+
+--- Testing ---
+Spikeone
+
+--- Graphics ---
+*Note* All files that are not mentioned are made by Spikeone or under CC0 license.
+*Note* I'm using a file but the license is missing? Contact me via github!
+
+CURSOR_SHINY
+-> 'Gauntlet Cursor' by itsmars see www.opengameart.org
+
+Tilesets Ground/Building/Units
+-> Andre Mari Coppola: https://twitter.com/ToenAndreMC
+-> License - http://creativecommons.org/licenses/by/4.0/
+-> The tiles have been splitted into seperate files
+
+--- Sound ---
+*Note* All soundfiles have been converted to *.ogg to save disk space!
+*Note* All files that are not mentioned are made by Spikeone or under CC0 license.
+*Note* I'm using a file but the license is missing? Contact me via github!
+
+SND_HUM_ARMY_MOVE.ogg
+-> 'Fantozzi's' Footsteps by Fantozzi see www.opengameart.org
+
+SND_UI_BUTTON.ogg
+SND_HUM_ARMY_LOSE.ogg
+SND_HUM_ARMY_WIN.ogg
+-> Little Robot Sound Factory www.littlerobotsoundfactory.com
+
+SND_BLD_DESTROY_1
+-> '2 High Quality Explosions' by Michel Baradari see www.apollo-music.de
+
+SND_HUM_ARMY_ATTACK
+SND_HUM_ARMY_ATTACKBLD_1
+SND_HUM_ARMY_ATTACKBLD_2
+SND_HUM_ARMY_ATTACKBLD_3
+SND_HUM_ARMY_NEW
+SND_HUM_ARMY_SELECT
+-> 'Soldier Voice Acting' by kurt see www.opengameart.org
+
+SND_HUM_STABLE
+SND_HUM_ARCHERRANGE
+-> Sound package from Heroes of Hawks Haven By Tuomo Untinen
+
+SND_INIT_DONE
+-> 'Win sound effect' by Listener see www.opengameart.org
+
+SND_UI_INPUT
+-> 'Book Flip Sounds' by Voltiment555 see www.opengameart.org
+
+SNG_01_10
+-> 'War Drums' by danke see www.looperman.com
+
+SNG_02_10
+-> 'War Drums' by ProducerH see www.looperman.com
+
+SNG_03_10
+-> 'War Drums High Quality Loop' by YogeshST see www.looperman.com
+
+--- Maps ---
+none
+
+--- Campaign ---
+none
+
+--- Other ---
+none
+[END]
+
+Ignore
+These
+Lines
+
+[NOTLICENSE]
+This is just nothing
+[END]
+
+[I N V A L ID]
+This one is Invalid
+[END]

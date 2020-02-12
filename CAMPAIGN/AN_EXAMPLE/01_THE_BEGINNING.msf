@@ -1,0 +1,82 @@
+// This is a ScriptFile for Missions
+// Commands:
+// / -> it's a comment
+// ! -> it's an event
+// @ -> it's an action
+// It does not really matter in which order this script written. It's still recomended to group them in a good order.
+
+// This shows the initial text and sets the AI's name to Bandits
+// event    eventID     groupID
+!ON_START   |1          |1
+// action   groupID     playerID    Name to set
+@SET_NAME   |1          |2          |Bandits
+// action   groupID     Text to display
+@SHOW_TEXT  |1          |The Beginning \n \n This campaign will serve as introduction to explain the basics of the game. There are 4 resources: \n Gold   - Needed for buildings and units \n Wood   - Needed for buildings \n Food   - Needed for units \n People - Needed for units \n \n You should start by building a sawmill and a mine. Buildings in general can be only built close to an HQ or watchtower. To expand your building area you need to build more watchtowers. \n \n Sawmill: \n This building may only be built next to a forest. After each round it produces some wood. \n \n Mine: This building may only be built next to gold. After each round it produces some wood. \n \n Task: \n Place a sawmill and a mine.
+
+// Simply trigger when a mine is placed
+// event            eventID groupID playerID    buildingID (mine)
+!ON_BUILDING_PLACED |2      |-1     |1          |7
+
+// Simply trigger when a sawmill is placed
+// event            eventID groupID playerID    buildingID (sawmill)
+!ON_BUILDING_PLACED |3      |-1     |1          |8
+
+// Trigger when mine and sawmill are placed
+// event        eventID groupID     eventID1    eventID2
+!ON_EVENTS_MET  |4      |4          |2          |3
+// action   groupID     Text to display
+@SHOW_TEXT  |4          |You placed both buildings, good job! \n \n Buildings are built at different speeds. Larger ones need longer until they are finished but also have more hitpoints. A good indicator if a building is large or small are the material cost. \n \n In general you should first build a strong economy to support expanding to new resources. Now keep an eye on the building progress bars above the buildings and finish this round. \n \n We should follow the road north. \n Task: Build a barracks.
+
+// Some explanation / fun texts
+// 8, 6 - harbor    eventID groupID x   y
+!ON_TILE_CLICKED    |5      |5      |8  |6
+@SHOW_TEXT|5|Harbor building: \n \n This seems to be some spot for trading. Sadly we don't have the knowledge on how to build ships, reaching new islands will be a dream not to come true ever.
+
+// 7, 7 - forest    eventID groupID x   y
+!ON_TILE_CLICKED    |6      |6      |7  |7
+@SHOW_TEXT|6|Forest: \n \n As you may guessed, multiple trees form a forest. Units may not pass those. You can build a sawmill directly adjacent to a forest. They'll never deplete.
+
+// 4, 6 - gold      eventID groupID x   y
+!ON_TILE_CLICKED    |7      |7      |4  |6
+@SHOW_TEXT|7|Gold: \n \n There are some stones that contain gold. You can build a mine adjacent to those spots in order to mine gold. They'll never deplete.
+
+// 4, 4 - bridge    eventID groupID x   y
+!ON_TILE_CLICKED    |8      |8      |4  |4
+@SHOW_TEXT|8|You are standing on this bridge, tossing a coin down the river. \n \n Where will this journey go?
+
+// 7, 2 - Signpost   eventID groupID x   y
+!ON_TILE_CLICKED    |9      |9      |7  |2
+@SHOW_TEXT|9|There is something written but you can't possibly decipher it. You try noting down each glyph and eventually find out the following: \n \n You can't read.
+
+// 4, 3 - ambush
+// event    eventID groupID playerID    x   y
+!ON_ARMY_AT |11     |11     |1          |4  |3
+@SHOW_TEXT|11|Ambush! \n \n These lands don't seem to be as friendly as we first thought. Our army has been surrounded by a bunch of bandits. Kill them and follow the road north!
+// action   groupID playerID    melee   range   horse   x   y
+@ADD_ARMY   |11     |2          |1      |0      |0      |4  |4
+// action   groupID playerID    melee   range   horse   x   y
+@ADD_ARMY   |11     |2          |1      |0      |0      |5  |3
+
+// Player won the game (reaching north with an army)
+// event    eventID groupID playerID    x   y
+!ON_ARMY_AT |10     |10     |1          |6  |1
+// action   groupID
+@GAME_WIN   |10
+
+// Player raised an army
+// event        eventID groupID playerID    sumArmies
+!ON_ARMY_RAISED |12     |12     |1          |-1
+@SHOW_TEXT|12|Our strength grows! \n \n You raised your first army. By clicking on it you can open the information window. Depending on the current position of the army, there are different action the army can perform for each direction. Thats either none, move or attack. \n \n Task: Follow the road and move to the north!
+
+// The barracks or whatever is ready
+// event            eventID groupID playerID    buildingID  countDone
+!ON_BUILDING_COUNT  |13     |13     |1          |9          |1
+!ON_BUILDING_COUNT  |14     |13     |1          |10         |1
+!ON_BUILDING_COUNT  |15     |13     |1          |11         |1
+// disable all 3 events
+// action           groupID eventID eventState
+@SET_EVENT_STATE    |13     |13     |0
+@SET_EVENT_STATE    |13     |14     |0
+@SET_EVENT_STATE    |13     |15     |0
+// Finally show a message
+@SHOW_TEXT|13|Military building done \n \n This is great news. You can finally recruit an army. Each army can have different regiments: \n Melee    - They are always present when recruiting \n Range    - They can be bought near an archerrange \n Horsemen - They can be bought near a stable \n \n Each army cost some food and gold. Also they require a population of 5 per regiment. To increase your population you have to build more houses - or lose armies. The HQ produces 5 people, so you can recruit one army at the beginning.
