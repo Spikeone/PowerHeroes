@@ -11,7 +11,7 @@
 // action   groupID     playerID    Name to set
 @SET_NAME   |1          |2          |Bandits
 // action   groupID     Text to display
-@SHOW_TEXT  |1          |The Beginning \n \n This campaign will serve as introduction to explain the basics of the game. There are 4 resources: \n Gold   - Needed for buildings and units \n Wood   - Needed for buildings \n Food   - Needed for units \n People - Needed for units \n \n You should start by building a sawmill and a mine. Buildings in general can be only built close to an HQ or watchtower. To expand your building area you need to build more watchtowers. \n \n Sawmill: \n This building may only be built next to a forest. After each round it produces some wood. \n \n Mine: This building may only be built next to gold. After each round it produces some wood. \n \n Task: \n Place a sawmill and a mine.
+@SHOW_TEXT  |1          |The Beginning \n \n This campaign will serve as introduction to explain the basics of the game. There are 4 resources: \n Gold   - Needed for buildings and units \n Wood   - Needed for buildings \n Food   - Needed for units \n People - Needed for units \n \n You should start by building a sawmill and a mine. Buildings in general can be only built close to an HQ or watchtower. To expand your building area you need to build more watchtowers. \n \n Sawmill: \n This building may only be built next to a forest. After each round it produces some wood. \n \n Mine: This building may only be built next to gold. After each round it produces some gold. \n \n Task: \n Place a sawmill and a mine.
 
 // Simply trigger when a mine is placed
 // event            eventID groupID playerID    buildingID (mine)
