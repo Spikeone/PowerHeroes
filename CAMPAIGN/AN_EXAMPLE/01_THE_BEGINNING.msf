@@ -15,11 +15,11 @@
 
 // Simply trigger when a mine is placed
 // event            eventID groupID playerID    buildingID (mine)
-!ON_BUILDING_PLACED |2      |-1     |1          |7
+!ON_BUILDING_PLACED |2      |-1     |1          |6
 
 // Simply trigger when a sawmill is placed
 // event            eventID groupID playerID    buildingID (sawmill)
-!ON_BUILDING_PLACED |3      |-1     |1          |8
+!ON_BUILDING_PLACED |3      |-1     |1          |7
 
 // Trigger when mine and sawmill are placed
 // event        eventID groupID     eventID1    eventID2
@@ -52,10 +52,10 @@
 // event    eventID groupID playerID    x   y
 !ON_ARMY_AT |11     |11     |1          |4  |3
 @SHOW_TEXT|11|Ambush! \n \n These lands don't seem to be as friendly as we first thought. Our army has been surrounded by a bunch of bandits. Kill them and follow the road north!
-// action   groupID playerID    melee   range   horse   x   y
-@ADD_ARMY   |11     |2          |1      |0      |0      |4  |4
-// action   groupID playerID    melee   range   horse   x   y
-@ADD_ARMY   |11     |2          |1      |0      |0      |5  |3
+// action   groupID playerID    rank    x   y
+@ADD_ARMY   |11     |2          |0      |4  |4
+// action   groupID playerID    rank    x   y
+@ADD_ARMY   |11     |2          |0      |5  |3
 
 // Player won the game (reaching north with an army)
 // event    eventID groupID playerID    x   y
@@ -70,13 +70,11 @@
 
 // The barracks or whatever is ready
 // event            eventID groupID playerID    buildingID  countDone
-!ON_BUILDING_COUNT  |13     |13     |1          |9          |1
-!ON_BUILDING_COUNT  |14     |13     |1          |10         |1
-!ON_BUILDING_COUNT  |15     |13     |1          |11         |1
+!ON_BUILDING_COUNT  |13     |13     |1          |8          |1
+
 // disable all 3 events
 // action           groupID eventID eventState
 @SET_EVENT_STATE    |13     |13     |0
-@SET_EVENT_STATE    |13     |14     |0
-@SET_EVENT_STATE    |13     |15     |0
+
 // Finally show a message
 @SHOW_TEXT|13|Military building done \n \n This is great news. You can finally recruit an army. Each army can have different regiments: \n Melee    - They are always present when recruiting \n Range    - They can be bought near an archerrange \n Horsemen - They can be bought near a stable \n \n Each army cost some food and gold. Also they require a population of 5 per regiment. To increase your population you have to build more houses - or lose armies. The HQ produces 5 people, so you can recruit one army at the beginning.
