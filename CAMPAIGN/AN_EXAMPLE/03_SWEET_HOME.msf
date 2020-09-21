@@ -1,6 +1,6 @@
 !ON_START|1|1
 @SHOW_TEXT|1|Finally home \n \n But which is my house? One of my neighbours was evil, he may not recognise me and will fight me. The other home was deserted and there might be bandits now. Good luck I remember a rhyme about the road... \n \n A bridge I may pass, \n old stones one the side, \n there is nothing to hide, \n so kiss my ass! \n \n The mountains I see, \n but to the forest I go, \n old pops was too slow, \n he had to pay a fee. \n \n I hope that helps me out a bit. \n \n Task: Find home
-@ADD_ARMY |1|1|1|7|12
+@ADD_ARMY |1|1|7|12
 
 @ADD_BUILDING|1|2|1|1|1|3
 @ADD_BUILDING|1|2|1|1|7|3
@@ -8,14 +8,14 @@
 
 // Fail 1,5
 !ON_ARMY_AT|2|2|1|1|5
-@ADD_ARMY|2|2|3|1|4
-@ADD_ARMY|2|2|3|1|6
+@ADD_ARMY|2|2|1|4
+@ADD_ARMY|2|2|1|6
 @SHOW_TEXT|2|Damn it! \n It's my evil twin brother. Looks like I was not able to recall my route correctly - maybe I forgot that I have to walk it in reverse order. \n \n I don't think I can make it... gods may have mercy with me!
 
 // Fail 8,5
 !ON_ARMY_AT|3|3|1|8|5
-@ADD_ARMY|3|2|1|8|4
-@ADD_ARMY|3|2|1|8|6
+@ADD_ARMY|3|2|8|4
+@ADD_ARMY|3|2|8|6
 @SHOW_TEXT|3|Damn it! \n Some bandits infested this route. Looks like I was not able to recall my route correctly - maybe I forgot that I have to walk it in reverse order. \n \n I don't think I can make it... gods may have mercy with me!
 
 // Win 13,5

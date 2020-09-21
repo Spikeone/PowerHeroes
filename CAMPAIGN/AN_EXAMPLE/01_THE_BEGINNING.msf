@@ -52,10 +52,10 @@
 // event    eventID groupID playerID    x   y
 !ON_ARMY_AT |11     |11     |1          |4  |3
 @SHOW_TEXT|11|Ambush! \n \n These lands don't seem to be as friendly as we first thought. Our army has been surrounded by a bunch of bandits. Kill them and follow the road north!
-// action   groupID playerID    rank    x   y
-@ADD_ARMY   |11     |2          |0      |4  |4
-// action   groupID playerID    rank    x   y
-@ADD_ARMY   |11     |2          |0      |5  |3
+// action   groupID playerID    x   y
+@ADD_ARMY   |11     |2          |4  |4
+// action   groupID playerID    x   y
+@ADD_ARMY   |11     |2          |5  |3
 
 // Player won the game (reaching north with an army)
 // event    eventID groupID playerID    x   y
