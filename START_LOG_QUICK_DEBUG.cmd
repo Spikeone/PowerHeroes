@@ -1,0 +1,1 @@
+powershell .\PowerHeroes.ps1 -Quickstart $True -Debug $True > log.log
