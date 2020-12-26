@@ -3,6 +3,9 @@
 Spikeone
 
 --- Testing ---
+Hlolmer
+Julil
+Liotha
 Spikeone
 
 --- Graphics ---
@@ -23,8 +26,24 @@ Tilsets FoW
 -> The tiles have been splitted into seperate files
 -> Some tiles have been adapted
 
+ICON_GOLDCOIN
+ICON_WOOD
+-> Kyrise's Free 16x16 RPG Icon Pack
+-> https://kyrise.itch.io/
+-> License - http://creativecommons.org/licenses/by/4.0/
+-> The tiles have been splitted into seperate files
+-> Some tiles have been adapted
+
+ICON_WARES
+ICON_BOMB
+-> The Humble Item Pack
+-> https://thewisehedgehog.itch.io/thip
+-> License - http://creativecommons.org/licenses/by/4.0/
+-> The tiles have been splitted into seperate files
+-> Some tiles have been adapted
+
 --- Sound ---
-*Note* All soundfiles have been converted to *.ogg to save disk space!
+*Note* All soundfiles have been converted to *.wav to save disk space!
 *Note* All files that are not mentioned are made by Spikeone or under CC0 license.
 *Note* I'm using a file but the license is missing? Contact me via github!
 
@@ -76,7 +95,8 @@ none
 none
 
 --- Other ---
-Liotha
+none
+
 [END]
 
 Ignore
