@@ -1,7 +1,0 @@
-In K:\PowerHeroes\PowerHeroes.ps1:200 Zeichen:1
-+ {
-+ ~
-Schlieáende "}" fehlt im Anweisungsblock.
-    + CategoryInfo          : ParserError: (:) [], ParseException
-    + FullyQualifiedErrorId : MissingEndCurlyBrace
- 
