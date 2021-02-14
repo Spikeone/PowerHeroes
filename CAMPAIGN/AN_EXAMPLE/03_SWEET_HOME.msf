@@ -1,3 +1,6 @@
+!ON_LOAD|0|0
+@SET_FOW|0|1
+
 !ON_START|1|1
 @SHOW_TEXT|1|Finally home \n \n But which is my house? One of my neighbours was evil, he may not recognise me and will fight me. The other home was deserted and there might be bandits now. Good luck I remember a rhyme about the road... \n \n A bridge I may pass, \n old stones one the side, \n there is nothing to hide, \n so kiss my ass! \n \n The mountains I see, \n but to the forest I go, \n old pops was too slow, \n he had to pay a fee. \n \n I hope that helps me out a bit. \n \n Task: Find home
 @ADD_ARMY |1|1|7|12

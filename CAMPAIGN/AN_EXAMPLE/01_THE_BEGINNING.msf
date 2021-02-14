@@ -5,6 +5,12 @@
 // @ -> it's an action
 // It does not really matter in which order this script written. It's still recomended to group them in a good order.
 
+// This changes settings of the game
+// event    eventID     groupID
+!ON_LOAD    |0          |0
+// action   groupID     state
+@SET_FOW    |0          |1
+
 // This shows the initial text and sets the AI's name to Bandits
 // event    eventID     groupID
 !ON_START   |1          |1
