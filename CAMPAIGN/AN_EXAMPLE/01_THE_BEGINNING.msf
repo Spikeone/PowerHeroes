@@ -11,7 +11,7 @@
 // action   groupID     playerID    Name to set
 @SET_NAME   |1          |2          |Bandits
 // action   groupID     Text to display
-@SHOW_TEXT  |1          |The Beginning \n \n This campaign will serve as introduction to explain the basics of the game. There are 4 resources: \n Gold   - Needed for buildings and units \n Wood   - Needed for buildings \n Food   - Needed for units \n People - Needed for units \n \n You should start by building a sawmill and a mine. Buildings in general can be only built close to an HQ or watchtower. To expand your building area you need to build more watchtowers. \n \n Sawmill: \n This building may only be built next to a forest. After each round it produces some wood. \n \n Mine: This building may only be built next to gold. After each round it produces some gold. \n \n Task: \n Place a sawmill and a mine.
+@SHOW_TEXT  |1          |The Beginning \n \n This campaign will serve as introduction to explain the basics of the game. There are 4 resources: \n Gold   - Needed for buildings and units \n Wood   - Needed for buildings \n Food   - Needed for units \n People - Needed for units \n \n You should start by building a sawmill and a mine. Buildings in general can be only built close to an HQ or watchtower. To expand your building area you need to build more watchtowers. \n \n Sawmill: \n This building may be only built next to a forest. After each round it produces some wood. \n \n Mine: This building may be only built next to gold. After each round it produces some gold. \n \n Task: \n Place a sawmill and a mine.
 
 // Simply trigger when a mine is placed
 // event            eventID groupID playerID    buildingID (mine)
@@ -25,7 +25,7 @@
 // event        eventID groupID     eventID1    eventID2
 !ON_EVENTS_MET  |4      |4          |2          |3
 // action   groupID     Text to display
-@SHOW_TEXT  |4          |You placed both buildings, good job! \n \n Buildings are built at different speeds. Larger ones need longer until they are finished but also have more hitpoints. A good indicator if a building is large or small are the material cost. \n \n In general you should first build a strong economy to support expanding to new resources. Now keep an eye on the building progress bars above the buildings and finish this round. \n \n We should follow the road north. \n Task: Build a barracks.
+@SHOW_TEXT  |4          |You placed both buildings, good job! \n \n Buildings are built at different speeds. Larger ones need longer until they are finished but also have more hitpoints. A good indicator if a building is large or small are the material costs. \n \n In general you should first build a strong economy to support expanding to new resources. Now keep an eye on the building progress bars above the buildings and finish this round. \n \n We should follow the road north. \n Task: Build a barracks.
 
 // Some explanation / fun texts
 // 8, 6 - harbor    eventID groupID x   y
@@ -77,4 +77,4 @@
 @SET_EVENT_STATE    |13     |13     |0
 
 // Finally show a message
-@SHOW_TEXT|13|Military building done \n \n This is great news. You can finally recruit an army. Each army can have different regiments: \n Melee    - They are always present when recruiting \n Range    - They can be bought near an archerrange \n Horsemen - They can be bought near a stable \n \n Each army cost some food and gold. Also they require a population of 5 per regiment. To increase your population you have to build more houses - or lose armies. The HQ produces 5 people, so you can recruit one army at the beginning.
+@SHOW_TEXT|13|Military building done \n \n This is great news. You can finally recruit an army. Each army costs 35 gold and 60 food and require 5 people each. To increase your population you have to build more houses - or lose armies. The HQ produces 5 people, so you can recruit one army at the beginning.
