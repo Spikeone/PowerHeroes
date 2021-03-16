@@ -6,8 +6,8 @@
 // It does not really matter in which order this script written. It's still recomended to group them in a good order.
 
 // This changes settings of the game
-// event    eventID     groupID
-!ON_LOAD    |0          |0
+// event        eventID     groupID
+!ON_LOAD_MAP    |0          |0
 // action   groupID     state
 @SET_FOW    |0          |1
 
@@ -58,10 +58,14 @@
 // event    eventID groupID playerID    x   y
 !ON_ARMY_AT |11     |11     |1          |4  |3
 @SHOW_TEXT|11|Ambush! \n \n These lands don't seem to be as friendly as we first thought. Our army has been surrounded by a bunch of bandits. Kill them and follow the road north!
-// action   groupID playerID    x   y
-@ADD_ARMY   |11     |2          |4  |4
-// action   groupID playerID    x   y
-@ADD_ARMY   |11     |2          |5  |3
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |11     |2          |4  |4  |1
+// action   groupID HP
+@SET_ARMY_HP|11     |1
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |11     |2          |5  |3  |1
+// action   groupID HP
+@SET_ARMY_HP|11     |1
 
 // Player won the game (reaching north with an army)
 // event    eventID groupID playerID    x   y
