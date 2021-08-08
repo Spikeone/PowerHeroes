@@ -42,6 +42,13 @@ ICON_BOMB
 -> The tiles have been splitted into seperate files
 -> Some tiles have been adapted
 
+
+
+--- Music ---
+SNG_THEME.mp3
+-> Created by Dantana
+-> https://www.dantana.de/
+
 --- Sound ---
 *Note* All soundfiles have been converted to *.wav to save disk space!
 *Note* All files that are not mentioned are made by Spikeone or under CC0 license.
