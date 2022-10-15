@@ -1,0 +1,9 @@
+!ON_LOAD_MAP|0|0
+
+!ON_START|1|1
+// action       groupID     Trigggers   Type    Icon        Text
+@SHOW_DIALOGUE  |1          |2          |LEFT   |FACE_23    |???: \n \n (bone rattling)
+                groupID SoundID
+@PLAY_SOUND     |2      |SND_KAREN_SUPRISED
+// action       groupID     Trigggers   Type    Icon        Text
+@SHOW_DIALOGUE  |2          |           |RIGHT  |FACE_4     |You: \n \n Huh? \n \n Who is this?
