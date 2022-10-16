@@ -6,6 +6,7 @@
 !ON_START|1|1
 // action       groupID     Trigggers   Type    Icon        Text
 @SHOW_DIALOGUE  |1          |2          |LEFT   |FACE_23    |???: \n \n (bone rattling)
+@SET_PORTRAIT   |1          |1          |4
                 groupID SoundID
 @PLAY_SOUND     |2      |SND_KAREN_SUPRISED
 // action       groupID     Trigggers   Type    Icon        Text
