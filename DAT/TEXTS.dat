@@ -34,15 +34,19 @@ ICON_WOOD
 -> The tiles have been splitted into seperate files
 -> Some tiles have been adapted
 
-ICON_WARES
 ICON_BOMB
 -> The Humble Item Pack
 -> https://thewisehedgehog.itch.io/thip
--> License - http://creativecommons.org/licenses/by/4.0/
+-> License: http://creativecommons.org/licenses/by/4.0/
 -> The tiles have been splitted into seperate files
 -> Some tiles have been adapted
 
-
+FACES
+-> '32x32 Fantasy portrait set' by CobraLad
+-> License: https://creativecommons.org/licenses/by/3.0/
+-> See: https://cobralad.itch.io/fantasy-portraits-32x32
+-> Graphics have been resized to 16x16
+-> Tiles have been merged into one file
 
 --- Music ---
 SNG_THEME.mp3
@@ -86,7 +90,7 @@ SND_UI_INPUT
 SND_YOUR_TURN
 -> 'Level Up' by Joth see opengameart.org/users/joth
 
-SDN_TODO
+SDN_KAREN_*
 -> Super Dialogue Audio Pack by Dillon Becker. This work is licensed under CC BY 4.0
 -> https://bckr.itch.io/sdap
 -> https://dillonbecker.com/

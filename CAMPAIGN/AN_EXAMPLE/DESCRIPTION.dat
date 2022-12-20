@@ -1,20 +1,18 @@
-   The Example Campaign
+Title     : The Example Campaign
 Author    : Spikeone
-Maps      : 3
+Maps      : 5
 Difficulty: Very Easy
----------------------------
-This campaign is an example
-on how  to setup a new cam-
-paign. Every  feature  that
-is currently implemented is
-used in either way.
-Please use this campaign as
-a   reference.  Good  Luck!
-
-The year 3000, everything burns and I'm writing this long line to test my automatic linebreaking!
-The year 3000, everything 
-burns and I'm writing this
-long line to test my 
-automatic linebreaking!
----------------------------
-- 12 LINES, 27 CHARS each -
+-------------------------------------
+This campaign is an example on how to
+setup a new campaign.  Every  feature
+that is currently implemented is used
+in either way.  Please u se this cam-
+paign as a reference. Good Luck!
+Some Text
+Line 12
+What comes after 12?
+Beer
+More beer
+1234567890123456789012345678901234567890
+--------------------------------------
+------ 14 LINES - 38 CHARS each ------

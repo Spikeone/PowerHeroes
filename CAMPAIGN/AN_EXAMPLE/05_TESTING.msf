@@ -4,11 +4,11 @@
 @SET_FOW    |0          |1
 
 !ON_START|1|1
-// action       groupID     Trigggers   Type    Icon        Text
-@SHOW_DIALOGUE  |1          |2          |LEFT   |FACE_23    |???: \n \n (bone rattling)
+// action       groupID     Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |1          |2          |LEFT   |0      |FACE_23    |???: \n \n (bone rattling)
 @SET_PORTRAIT   |1          |1          |4
                 groupID SoundID
 @PLAY_SOUND     |2      |SND_KAREN_SUPRISED
-// action       groupID     Trigggers   Type    Icon        Text
-@SHOW_DIALOGUE  |2          |           |RIGHT  |FACE_4     |You: \n \n Huh? \n \n Who is this?
-@UPDATE_FOW     |2          |1          |0      |0  |2
+// action       groupID     Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |2          |           |RIGHT  |1      |FACE_4     |You: \n \n Huh? \n \n Who is this?
+@UPDATE_FOW     |2          |1          |0      |0      |2

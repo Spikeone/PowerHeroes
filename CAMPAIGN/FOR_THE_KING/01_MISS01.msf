@@ -1,0 +1,359 @@
+// This changes settings of the game
+// event        eventID     groupID
+!ON_LOAD_MAP    |0          |0
+// action   groupID     state
+@SET_FOW    |0          |1
+
+// event    eventID     groupID
+!ON_START   |1          |1
+//              groupID     playerId    faceIndex
+@SET_PORTRAIT   |1          |1          |4
+// action       groupID     Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |1          |2          |RIGHT  |0      |FACE_2    |Sailor: \n \n Mylady! Wake up, we are nearing the shores!
+// action       groupID     playerId    x   y   r
+@UPDATE_FOW     |1          |1          |3  |2  |2
+// action       groupID     x           y
+@CENTER_VIEW    |1          |3          |7
+// action       groupID eventId state
+@SET_EVENT_STATE|1      |9      |0
+@SET_EVENT_STATE|1      |11     |0
+
+
+
+// action       groupID     Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |2          |3          |LEFT   |0      |FACE_4    |You: \n \n ...
+// action       groupID     soundName
+@PLAY_SOUND     |2          |SND_KAREN_SUPRISED
+// action       groupID     playerId    x   y   r
+@UPDATE_FOW     |2          |1          |1  |7  |2
+// action       groupID     playerId    x   y   r
+@UPDATE_FOW     |2          |1          |4  |5  |0
+@UPDATE_FOW     |2          |1          |0  |4  |0
+// action       groupID     x           y
+@CENTER_VIEW    |2          |0          |12
+
+// action       groupID     Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |3          |4          |RIGHT  |0      |FACE_2    |Sailor: \n \n Did you hear the bells?
+// action       groupID     soundName
+@PLAY_SOUND     |3          |SND_HUM_HQ
+// action       groupID     playerId    x   y   r
+@UPDATE_FOW     |3          |1          |3  |12 |2
+@UPDATE_FOW     |3          |1          |4  |9  |0
+@UPDATE_FOW     |3          |1          |0  |10 |0
+// action       groupID     x           y
+@CENTER_VIEW    |3          |0          |17
+
+// action       groupID     Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |4          |5          |LEFT   |0      |FACE_4    |You: \n \n The town is under attack! To arms men!
+// action       groupID     soundName
+@PLAY_SOUND     |4          |SND_KAREN_SHOCK
+// action       groupID     playerId    x   y   r
+@UPDATE_FOW     |4          |1          |6  |14 |2
+@UPDATE_FOW     |4          |1          |3  |15 |0
+@UPDATE_FOW     |4          |1          |6  |11 |0
+// action       groupID     x           y
+@CENTER_VIEW    |4          |11         |19
+// action       groupID     playerID    x   y   level
+@ADD_ARMY       |4          |2          |6  |12 |1
+// action       groupID     HP
+@SET_ARMY_HP     |4         |1
+// action       groupID     |playerId   type    state   x       y
+@ADD_BUILDING    |4         |1          |2      |1      |6      |11
+
+
+// action       groupID     Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |5          |6          |RIGHT  |1      |FACE_14   |Soldier: \n \n At your command!
+// action       groupID     soundName
+@PLAY_SOUND     |5          |SND_HUM_ARMY_ATTACK
+// action       groupID     playerID    x   y   level
+@ADD_ARMY       |5          |1          |5  |12 |1
+// action       groupID     HP
+@SET_ARMY_HP    |5          |1
+// action       groupID     MP
+@SET_ARMY_MP    |5          |2
+
+// event        eventID groupID     playerId1   playerId2   winnerId
+!ON_ARMY_BATTLE |7      |7          |-1         |-1         |-1
+// action       groupID Trigggers   Type        close       Icon        Text
+@SHOW_DIALOGUE  |7      |8          |RIGHT      |1          |FACE_14   |Soldier: \n \n There are more! Ready yourself men!
+// action       groupID playerID    x           y           level
+@ADD_ARMY       |7      |2          |7          |11         |1
+// action       groupID HP
+@SET_ARMY_HP    |7      |1
+// action       groupID playerID    x           y           level
+@ADD_ARMY       |7      |2          |9          |11         |1
+// action       groupID HP
+@SET_ARMY_HP    |7      |1
+
+// action       groupID playerID    x           y           level
+@ADD_ARMY       |8      |1          |7          |12         |1
+// action       groupID HP
+@SET_ARMY_HP    |8      |1
+// action       groupID MP
+@SET_ARMY_MP    |8      |2
+// action       groupID eventId state
+@SET_EVENT_STATE|8      |9      |1
+
+// event        eventID groupID     playerId1   playerId2   winnerId
+!ON_ARMY_BATTLE |9      |9          |-1         |-1         |-1
+// action       groupID Trigggers   Type        close       Icon        Text
+@SHOW_DIALOGUE  |9      |10         |RIGHT      |1          |FACE_14    |Soldier: \n \n Move!
+// action       groupID playerID    x           y           level
+@ADD_ARMY       |10     |1          |9          |12         |1
+// action       groupID HP
+@SET_ARMY_HP    |10     |1
+// action       groupID MP
+@SET_ARMY_MP    |10     |2
+// action       groupID eventId state
+@SET_EVENT_STATE|10     |11     |1
+
+// event        eventID groupID     playerId1   playerId2   winnerId
+!ON_ARMY_BATTLE |11     |11         |-1         |-1         |-1
+// action       groupID Trigggers   Type        close       Icon        Text
+@SHOW_DIALOGUE  |11     |12         |LEFT       |0          |FACE_4     |You: \n \n Are there more?
+@SHOW_DIALOGUE  |12     |13         |RIGHT      |0          |FACE_14    |Soldier: \n \n We searched the vicinity and couldn't find any. Any orders?
+@SHOW_DIALOGUE  |13     |14         |LEFT       |0          |FACE_4     |You: \n \n I want to know who those attackes were! Search the area for clues commander.
+@SHOW_DIALOGUE  |14     |15         |RIGHT      |0          |FACE_14    |Soldier: \n \n I'm sorry, can't do.
+@SHOW_DIALOGUE  |15     |16         |LEFT       |0          |FACE_4     |You: \n \n Damn it! As your future king, I order you to purge these woods!
+@SHOW_DIALOGUE  |16     |17         |RIGHT      |0          |FACE_14    |Soldier: \n \n You are not my king yet, girl! I would obey that command if I could. There are no men left to search.
+@SHOW_DIALOGUE  |17     |18         |LEFT       |0          |FACE_4     |You: \n \n I'm... I'm... sorry...
+@SHOW_DIALOGUE  |18     |19         |LEFT       |1          |FACE_4     |You: \n \n We should set camp and rebuild this village. 
+
+// action       groupID |playerId   type    state   x       y
+// HQ
+@ADD_BUILDING   |19     |1          |0      |1      |7      |10
+// Gold Mine
+@ADD_BUILDING   |19     |1          |6      |1      |9      |8
+// Sawmill
+@ADD_BUILDING   |19     |1          |7      |1      |7      |9
+@ADD_BUILDING   |19     |1          |7      |1      |6      |10
+// Farm
+@ADD_BUILDING   |19     |1          |4      |1      |9      |10
+// Field
+@ADD_BUILDING   |19     |1          |5      |1      |9      |11
+@ADD_BUILDING   |19     |1          |5      |1      |10     |10
+//Tower
+@ADD_BUILDING   |19     |1          |9      |0.25   |10     |8
+
+// AI Camp 1 (left)
+// Gold Mine
+@ADD_BUILDING   |19     |2          |6      |1      |6      |2
+@ADD_BUILDING   |19     |2          |6      |1      |8      |2
+//Tower
+@ADD_BUILDING   |19     |2          |9      |1      |8      |3
+// Sawmill
+@ADD_BUILDING   |19     |2          |7      |1      |6      |3
+// Barracks
+@ADD_BUILDING   |19     |2          |8      |1      |8      |1
+
+// AI Camp 2 (right)
+// Gold Mine
+@ADD_BUILDING   |19     |2          |6      |1      |20     |3
+//Tower
+@ADD_BUILDING   |19     |2          |9      |1      |19     |5
+// Sawmill
+@ADD_BUILDING   |19     |2          |7      |1      |18     |3
+@ADD_BUILDING   |19     |2          |7      |1      |19     |4
+// House (Medium)
+@ADD_BUILDING   |19     |2          |2      |1      |20     |4
+// House (Small)
+@ADD_BUILDING   |19     |2          |1      |1      |19     |6
+// Barracks
+@ADD_BUILDING   |19     |2          |8      |1      |19     |2
+
+// TODO Add armies
+// TODO Add Event for Barracks Count == 0
+// TODO Add End Dialogue
+// TODO Add Win Message
+
+//// event    eventID     groupID
+//!ON_START   |1          |1
+//// action   groupID     Text to display
+//@SHOW_TEXT  |1          |Move your army north!
+//// action   groupID playerID    x   y   level
+//@ADD_ARMY   |1     |1           |7  |13 |1
+
+// disable pre phase
+//@SET_EVENT_STATE|1|7|0
+//@SET_EVENT_STATE|1|3|0
+//@SET_EVENT_STATE|1|4|0
+//@SET_EVENT_STATE|1|5|0
+//@SET_EVENT_STATE|1|6|0
+//// disable phase 4
+//@SET_EVENT_STATE|1|8|0
+//@SET_EVENT_STATE|1|9|0
+//@SET_EVENT_STATE|1|10|0
+//@SET_EVENT_STATE|1|11|0
+//// disable phase 3
+//@SET_EVENT_STATE|1|12|0
+//@SET_EVENT_STATE|1|13|0
+//@SET_EVENT_STATE|1|14|0
+//@SET_EVENT_STATE|1|15|0
+//// disable phase 2
+//@SET_EVENT_STATE|1|16|0
+//@SET_EVENT_STATE|1|17|0
+//@SET_EVENT_STATE|1|18|0
+//@SET_EVENT_STATE|1|19|0
+//// disable phase 1
+//@SET_EVENT_STATE|1|20|0
+//@SET_EVENT_STATE|1|21|0
+//@SET_EVENT_STATE|1|22|0
+//@SET_EVENT_STATE|1|23|0
+//
+//// event    eventID groupID playerID    x   y
+//!ON_ARMY_AT |2      |2      |1          |7  |9
+//// action   groupID     Text to display
+//@SHOW_TEXT  |2          |Solve the Puzzle
+//// action    groupID playerID  bld state x   y
+//@ADD_BUILDING|2      |1       |9   |1    |5  |3
+//@ADD_BUILDING|2      |1       |9   |1    |5  |7
+//@ADD_BUILDING|2      |1       |9   |1    |9  |3
+//@ADD_BUILDING|2      |1       |9   |1    |9  |7
+//// enable pre phase
+//@SET_EVENT_STATE|2|7|1
+//@SET_EVENT_STATE|2|3|1
+//@SET_EVENT_STATE|2|4|1
+//@SET_EVENT_STATE|2|5|1
+//@SET_EVENT_STATE|2|6|1
+//
+//// While not clicked Mid, N-E-S-W
+//// event            eventID groupID x   y
+//!ON_TILE_CLICKED    |3      |3      |7  |4
+//!ON_TILE_CLICKED    |4      |3      |8  |5
+//!ON_TILE_CLICKED    |5      |3      |7  |6
+//!ON_TILE_CLICKED    |6      |3      |6  |5
+//@SHOW_TEXT|3|You should read the ancient writings in the middle first.
+//@SET_EVENT_STATE|3|3|1
+//@SET_EVENT_STATE|3|4|1
+//@SET_EVENT_STATE|3|5|1
+//@SET_EVENT_STATE|3|6|1
+//
+//// Mid clicked
+//// event            eventID groupID x   y
+//!ON_TILE_CLICKED    |7      |7      |7  |5
+//@SHOW_TEXT|7|You decipher the following: \n \n Eyes following a waterfall, \n thats the first two after all. \n The mighty sungod on his way, \n leads the next two, yay! \n \n It also says 'reset' whatever that means?
+//// Disable click mid
+//@SET_EVENT_STATE|7|3|0
+//@SET_EVENT_STATE|7|4|0
+//@SET_EVENT_STATE|7|5|0
+//@SET_EVENT_STATE|7|6|0
+//// reenable mid click
+//@SET_EVENT_STATE|7|7|1
+//// enable phase 1
+//@SET_EVENT_STATE|7|20|1
+//@SET_EVENT_STATE|7|21|1
+//@SET_EVENT_STATE|7|22|1
+//@SET_EVENT_STATE|7|23|1
+//// disable phase 2
+//@SET_EVENT_STATE|7|16|0
+//@SET_EVENT_STATE|7|17|0
+//@SET_EVENT_STATE|7|18|0
+//@SET_EVENT_STATE|7|19|0
+//// disable phase 3
+//@SET_EVENT_STATE|7|12|0
+//@SET_EVENT_STATE|7|13|0
+//@SET_EVENT_STATE|7|14|0
+//@SET_EVENT_STATE|7|15|0
+//// disable phase 4
+//@SET_EVENT_STATE|7|8|0
+//@SET_EVENT_STATE|7|9|0
+//@SET_EVENT_STATE|7|10|0
+//@SET_EVENT_STATE|7|11|0
+//
+//// round 4, west = win, else = reset
+//// 8 = good, 9 = bad
+//!ON_TILE_CLICKED|8|8|6|5
+////@SHOW_TEXT|8|The last light glows up!
+//@GAME_WIN|8
+//// disable reset
+//@SET_EVENT_STATE|8|7|0
+//// disable p4
+//@SET_EVENT_STATE|8|8|0
+//@SET_EVENT_STATE|8|9|0
+//@SET_EVENT_STATE|8|10|0
+//@SET_EVENT_STATE|8|11|0
+//
+//!ON_TILE_CLICKED|9|9|7|4
+//!ON_TILE_CLICKED|10|9|8|5
+//!ON_TILE_CLICKED|11|9|7|6
+//@SHOW_TEXT|9|All lights vanish!
+//// disable p4
+//@SET_EVENT_STATE|9|8|0
+//@SET_EVENT_STATE|9|9|0
+//@SET_EVENT_STATE|9|10|0
+//@SET_EVENT_STATE|9|11|0
+//
+//// round 3, east = advance, else = reset
+//// 12 = good, 13 = bad
+//!ON_TILE_CLICKED|12|12|8|5
+//@SHOW_TEXT|12|The third light glows up!
+//// disable p3
+//@SET_EVENT_STATE|12|12|0
+//@SET_EVENT_STATE|12|13|0
+//@SET_EVENT_STATE|12|14|0
+//@SET_EVENT_STATE|12|15|0
+//// enable p4
+//@SET_EVENT_STATE|12|8|1
+//@SET_EVENT_STATE|12|9|1
+//@SET_EVENT_STATE|12|10|1
+//@SET_EVENT_STATE|12|11|1
+//
+//!ON_TILE_CLICKED|13|13|7|4
+//!ON_TILE_CLICKED|14|13|7|6
+//!ON_TILE_CLICKED|15|13|6|5
+//@SHOW_TEXT|13|All lights vanish!
+//// disable p3
+//@SET_EVENT_STATE|13|12|0
+//@SET_EVENT_STATE|13|13|0
+//@SET_EVENT_STATE|13|14|0
+//@SET_EVENT_STATE|13|15|0
+//
+//// round 2, south = advance, else = reset
+//// 16 = good, 17 = bad
+//!ON_TILE_CLICKED|16|16|7|6
+//@SHOW_TEXT|16|The second light glows up!
+//// disable all  paths
+//@SET_EVENT_STATE|16|16|0
+//@SET_EVENT_STATE|16|17|0
+//@SET_EVENT_STATE|16|18|0
+//@SET_EVENT_STATE|16|19|0
+//// enable all paths (p3)
+//@SET_EVENT_STATE|16|12|1
+//@SET_EVENT_STATE|16|13|1
+//@SET_EVENT_STATE|16|14|1
+//@SET_EVENT_STATE|16|15|1
+//
+//!ON_TILE_CLICKED|17|17|7|4
+//!ON_TILE_CLICKED|18|17|8|5
+//!ON_TILE_CLICKED|19|17|6|5
+//@SHOW_TEXT|17|All lights vanish!
+//// disable all  paths
+//@SET_EVENT_STATE|17|16|0
+//@SET_EVENT_STATE|17|17|0
+//@SET_EVENT_STATE|17|18|0
+//@SET_EVENT_STATE|17|19|0
+//
+//// round 1, North = advance, else = reset
+//// This means group 20 = good, 21 = bad
+//!ON_TILE_CLICKED|20|20|7|4
+//@SHOW_TEXT|20|The first light glows up!
+//// disable all paths (p1)
+//@SET_EVENT_STATE|20|20|0
+//@SET_EVENT_STATE|20|21|0
+//@SET_EVENT_STATE|20|22|0
+//@SET_EVENT_STATE|20|23|0
+//// enable all paths (p2)
+//@SET_EVENT_STATE|20|16|1
+//@SET_EVENT_STATE|20|17|1
+//@SET_EVENT_STATE|20|18|1
+//@SET_EVENT_STATE|20|19|1
+//
+//!ON_TILE_CLICKED|21|21|8|5
+//!ON_TILE_CLICKED|22|21|7|6
+//!ON_TILE_CLICKED|23|21|6|5
+//@SHOW_TEXT|21|All lights vanish!
+//// disable all  paths
+//@SET_EVENT_STATE|21|20|0
+//@SET_EVENT_STATE|21|21|0
+//@SET_EVENT_STATE|21|22|0
+//@SET_EVENT_STATE|21|23|0
