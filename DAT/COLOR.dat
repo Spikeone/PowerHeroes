@@ -1,9 +1,7 @@
 CLR_BLACK           = 0,0,0,255
 CLR_MAGENTA         = 255,0,143,255
 CLR_TRANSPARENT     = 0,0,0,0
-CLR_GOLD_1          = 255,255,0,255
-CLR_GOLD_2          = 255,219,23,255
-CLR_GOLD_3          = 255,191,51,255
+CLR_GOLD            = 255,255,0,255
 CLR_BLUE_1          = 0,211,247,255
 CLR_BLUE_2          = 0,123,219,255
 CLR_BLUE_3          = 0,55,191,255

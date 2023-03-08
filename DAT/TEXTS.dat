@@ -21,6 +21,11 @@ Tilesets Ground/Building/Units
 -> The tiles have been splitted into seperate files
 -> Some tiles have been adapted
 
+Tilesets Ground
+-> www.kenney.nl
+-> The tiles have been splitted into seperate files
+-> Some tiles have been adapted
+
 Tilsets FoW
 -> the Karto tileset was made by Arynoc
 -> The tiles have been splitted into seperate files
@@ -39,6 +44,15 @@ ICON_BOMB
 -> https://thewisehedgehog.itch.io/thip
 -> License: http://creativecommons.org/licenses/by/4.0/
 -> The tiles have been splitted into seperate files
+-> Some tiles have been adapted
+
+OBJ_STONES_03
+-> https://bagas-aditya-winata.itch.io/exterior-tileset-pack
+-> Some tiles have been adapted
+
+OBJ_CHEST_*
+-> Created by 'ElvGames'
+-> https://elv-games.itch.io/free-retro-game-world-chests
 -> Some tiles have been adapted
 
 FACES

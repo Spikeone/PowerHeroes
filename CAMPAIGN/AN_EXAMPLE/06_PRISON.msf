@@ -1,0 +1,303 @@
+// event        eventID     groupID
+!ON_LOAD_MAP    |0          |0
+// action   groupID     state
+@SET_FOW    |0          |1
+
+!ON_START|1|1
+// action       groupID     Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |1          |           |RIGHT   |1      |FACE_4    |You: \n \n Where am I?
+@SET_PORTRAIT   |1          |1          |4
+// action       groupID     playerID    x   y   level
+@ADD_ARMY       |1          |1          |14 |5 |1
+// action       groupID     MP
+@SET_ARMY_MP    |1          |2
+
+@SET_EVENT_STATE|1     |4     |0
+@SET_EVENT_STATE|1     |5     |0
+@SET_EVENT_STATE|1     |6     |0
+
+// event    eventID groupID playerID    x   y
+!ON_ARMY_AT |2      |2      |1          |13 |5
+!ON_ARMY_AT |3      |2      |1          |13 |4
+// action       groupID     Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |2          |           |RIGHT   |1      |FACE_4    |You: \n \n I'm in a prison!
+@PLAY_SOUND     |2      |SND_KAREN_SUPRISED
+// action       groupID eventId state
+@SET_EVENT_STATE|2      |2     |0
+@SET_EVENT_STATE|2      |3     |0
+@SET_EVENT_STATE|2      |61    |0
+@SET_EVENT_STATE|2      |100   |0
+@SET_EVENT_STATE|2      |4     |1
+
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|4      |4   |13  |3
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |4     |           |RIGHT  |1      |FACE_4    |You: \n \n Ahhhhh, this scap makes a perfect lockpick.
+// action       groupID eventId state
+@SET_EVENT_STATE|4     |5     |0
+@SET_EVENT_STATE|4     |6     |1
+
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|5      |5   |13  |3
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |5     |           |RIGHT  |1      |FACE_4    |You: \n \n Maybe I can find some kind of Lockpick.
+// action       groupID eventId state
+@SET_EVENT_STATE|5     |5     |1
+
+// TODO: Use correct MMAP values for each connected tile
+// Currently you could move into any direction from the target tile
+// but you are not allowed to move onto the tile itself
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|6       |6     |12  |5
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |6      |           |RIGHT  |1      |FACE_4    |You: \n \n Unlocked!
+// action       groupID eventId state
+@SET_EVENT_STATE|6      |4     |0
+// action       groupID x   y   L1  L2  L3  Move    Continent
+@UPDATE_WORLD   |6      |11 |5  |   |   |-1 |7      |1
+@UPDATE_WORLD   |6      |12 |5  |   |   |-1 |10     |1
+@UPDATE_WORLD   |6      |13 |5  |   |   |-1 |11     |1
+
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|61      |61   |12  |5
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |61     |           |RIGHT  |1      |FACE_4    |You: \n \n Locked tight!
+// action       groupID eventId state
+@SET_EVENT_STATE|61     |61     |1
+
+
+
+//                groupID SoundID
+//@PLAY_SOUND     |2      |SND_KAREN_SUPRISED
+//// action       groupID     Trigggers   Type    close   Icon        Text
+//@SHOW_DIALOGUE  |2          |           |RIGHT  |1      |FACE_4     |You: \n \n Huh? \n \n Who is this?
+//@UPDATE_FOW     |2          |1          |0      |0      |2
+
+// Switch 1
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|20      |20   |11  |1
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |20     |           |RIGHT  |1      |FACE_4    |You: \n \n Something happened (right event)
+// action       groupID x   y   L1  L2  L3  Move    Continent
+@UPDATE_WORLD   |20     |11 |1  |   |   |37 |0     |1
+
+@UPDATE_WORLD   |20     |11 |2  |   |   |-1 |6      |1
+@UPDATE_WORLD   |20     |12 |2  |   |   |-1 |10     |1
+@UPDATE_WORLD   |20     |13 |2  |   |   |-1 |11     |1
+
+@UPDATE_WORLD   |20     |11 |8  |   |   |-1 |15     |1
+@UPDATE_WORLD   |20     |12 |8  |   |   |-1 |10     |1
+@UPDATE_WORLD   |20     |13 |8  |   |   |-1 |10     |1
+
+@UPDATE_WORLD   |20     |11 |11 |   |   |-1 |3      |1
+@UPDATE_WORLD   |20     |12 |11 |   |   |-1 |10     |1
+@UPDATE_WORLD   |20     |13 |11 |   |   |-1 |10     |1
+
+// action         groupID eventId state
+@SET_EVENT_STATE  |20     |60     |0
+@SET_EVENT_STATE  |20     |62     |0
+@SET_EVENT_STATE  |20     |63     |0
+
+// Switch 2
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|30      |30    |5  |1
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |30     |           |RIGHT  |1      |FACE_4    |You: \n \n Something happened (right event)
+// action       groupID x   y   L1  L2  L3  Move    Continent
+@UPDATE_WORLD   |30     |5  |1  |   |   |37 |0      |1
+
+@UPDATE_WORLD   |30     |3  |2  |   |   |-1 |3      |1
+@UPDATE_WORLD   |30     |4  |2  |   |   |-1 |10     |1
+@UPDATE_WORLD   |30     |5  |2  |   |   |-1 |12     |1
+
+@UPDATE_WORLD   |30     |3  |5  |   |   |-1 |10     |1
+@UPDATE_WORLD   |30     |4  |5  |   |   |-1 |10     |1
+@UPDATE_WORLD   |30     |5  |5  |   |   |-1 |13     |1
+
+@UPDATE_WORLD   |30     |8  |5  |   |   |   |14     |1
+@UPDATE_WORLD   |30     |8  |6  |8  |   |   |5      |1
+@UPDATE_WORLD   |30     |8  |7  |   |   |   |15     |1
+// action         groupID eventId state
+@SET_EVENT_STATE  |30     |70     |0
+@SET_EVENT_STATE  |30     |71     |0
+@SET_EVENT_STATE  |30     |50     |0
+
+// Switch 3
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|40      |40    |7  |1
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |40     |           |RIGHT  |1      |FACE_4    |You: \n \n Something happened (right event)
+// action       groupID x   y   L1  L2  L3  Move    Continent
+@UPDATE_WORLD   |40     |7  |1  |   |   |37 |0     |1
+
+@UPDATE_WORLD   |40     |8  |8  |   |   |   |15     |1
+@UPDATE_WORLD   |40     |8  |9  |8  |   |   |5      |1
+@UPDATE_WORLD   |40     |8  |10 |   |   |   |13     |1
+// action         groupID eventId state
+@SET_EVENT_STATE  |40     |51     |0
+
+
+// Door center
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|50      |50   |8   |6
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |50     |           |RIGHT  |1      |FACE_4    |You: \n \n Locked tight!
+// action       groupID eventId state
+@SET_EVENT_STATE|50     |50     |1
+
+// Door bottom
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|51      |51   |8   |9
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |51     |           |RIGHT  |1      |FACE_4    |You: \n \n Locked tight!
+// action       groupID eventId state
+@SET_EVENT_STATE|51     |51     |1
+
+// right side
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|60      |60   |12  |2
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |60     |           |RIGHT  |1      |FACE_4    |You: \n \n Locked tight!
+// action       groupID eventId state
+@SET_EVENT_STATE|60     |60     |1
+
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|62      |62   |12  |8
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |62     |           |RIGHT  |1      |FACE_4    |You: \n \n Locked tight!
+// action       groupID eventId state
+@SET_EVENT_STATE|62     |62     |1
+
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|63      |63   |12  |11
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |63     |           |RIGHT  |1      |FACE_4    |You: \n \n Locked tight!
+// action       groupID eventId state
+@SET_EVENT_STATE|63     |63     |1
+
+// right side
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|70      |70   |4   |2
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |70     |           |RIGHT  |1      |FACE_4    |You: \n \n Locked tight!
+// action       groupID eventId state
+@SET_EVENT_STATE|70     |70     |1
+
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|71      |71   |4   |5
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |71     |           |RIGHT  |1      |FACE_4    |You: \n \n Locked tight!
+// action       groupID eventId state
+@SET_EVENT_STATE|71     |71     |1
+
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|72      |72   |4   |8
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |72     |           |RIGHT  |1      |FACE_4    |You: \n \n Locked tight!
+// action       groupID eventId state
+@SET_EVENT_STATE|72     |72     |1
+
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|73      |73   |4   |11
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |73     |           |RIGHT  |1      |FACE_4    |You: \n \n Locked tight!
+// action       groupID eventId state
+@SET_EVENT_STATE|73     |73     |1
+
+
+// Object clicks
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|100    |100   |13  |3
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |100    |           |RIGHT  |1      |FACE_4    |You: \n \n Some chains. Better not think about...
+
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|101    |101   |14  |3
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |101    |           |RIGHT  |1      |FACE_4    |You: \n \n It's sticky. Why is it sticky?
+
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|102    |102   |14  |1
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |102    |           |RIGHT  |1      |FACE_4    |You: \n \n Nothing but rubbish.
+
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|103    |103   |13  |7
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |103    |           |RIGHT  |1      |FACE_4    |You: \n \n Bah!
+
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|104    |104   |14  |6
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |104    |           |RIGHT  |1      |FACE_4    |You: \n \n This has been broken before.
+
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|105    |105   |13  |10
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |105    |           |RIGHT  |1      |FACE_4    |You: \n \n An empty vase.
+
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|106    |106   |14  |10
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |106    |           |RIGHT  |1      |FACE_4    |You: \n \n I wonder if I ever find a key.
+
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|107    |107   |3   |0
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |107    |           |RIGHT  |1      |FACE_4    |You: \n \n The Splash Screen - whatever that means.
+
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|108    |108   |2   |1
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |108    |           |RIGHT  |1      |FACE_4    |You: \n \n A box. It's square.
+
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|109    |109   |2   |2
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |109    |           |RIGHT  |1      |FACE_4    |You: \n \n Is there a cat in this box?
+
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|110    |110   |2   |4
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |110    |           |RIGHT  |1      |FACE_4    |You: \n \n Books... some of them are naughty.
+
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|111    |111   |3   |4
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |111    |           |RIGHT  |1      |FACE_4    |You: \n \n Oh look a penny.
+
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|112    |112   |8   |4
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |112    |           |RIGHT  |1      |FACE_4    |You: \n \n Too Heavy!
+
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|113    |113   |8   |3
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |113    |           |RIGHT  |1      |FACE_4    |You: \n \n Cant read every letter: '?ild?s'?
+
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|114    |114   |9   |1
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |114    |           |RIGHT  |1      |FACE_4    |You: \n \n There is a readme, i will just accept them.
+
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|115    |115   |8   |1
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |115    |           |RIGHT  |1      |FACE_4    |You: \n \n One mans trash is another mans... trash.
+
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|116    |116   |4   |14
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |116    |           |RIGHT  |1      |FACE_4    |Here Lies: \n \n Your dreams.
+
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|117    |117   |10   |14
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |117    |           |RIGHT  |1      |FACE_4    |Here Lies: \n \n Some dirt.
+
+// event         eventID groupID x   y
+!ON_TILE_CLICKED|118    |118   |13   |14
+// action       groupID Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |118    |           |RIGHT  |1      |FACE_4    |Here Lies: \n \n Anna Tomie, she knew all bones she is.
+

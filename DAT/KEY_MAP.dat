@@ -25,3 +25,5 @@ Oemplus = +
 Subtract = -
 OemMinus = -
 SHIFTOemMinus = _
+SHIFTD2 = "
+SHIFTD4 = $
