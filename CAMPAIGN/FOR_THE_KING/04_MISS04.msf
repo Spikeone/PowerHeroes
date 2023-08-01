@@ -20,8 +20,8 @@
 
 
 
-// action       groupID     Trigggers   Type        close   Icon        Text
-@SHOW_DIALOGUE  |2          |3          |LEFTMAIN   |0      |KNIGHT_9   |You: \n \n ...
+// action       groupID     Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |2          |3          |LEFT   |0      |FACE_4    |You: \n \n ...
 // action       groupID     soundName
 @PLAY_SOUND     |2          |SND_KAREN_SUPRISED
 // action       groupID     playerId    x   y   r
@@ -44,7 +44,7 @@
 @CENTER_VIEW    |3          |0          |17
 
 // action       groupID     Trigggers   Type    close   Icon        Text
-@SHOW_DIALOGUE  |4          |5          |LEFT   |0      |FACE_24   |You: \n \n The town is under attack! To arms men!
+@SHOW_DIALOGUE  |4          |5          |LEFT   |0      |FACE_4    |You: \n \n The town is under attack! To arms men!
 // action       groupID     soundName
 @PLAY_SOUND     |4          |SND_KAREN_SHOCK
 // action       groupID     playerId    x   y   r

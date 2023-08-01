@@ -55,12 +55,28 @@ OBJ_CHEST_*
 -> https://elv-games.itch.io/free-retro-game-world-chests
 -> Some tiles have been adapted
 
-FACES
+OBJ_BONES_01
+OBJ_CASTLE_02
+OBJ_CASTLE_03
+OBJ_CASTLE_04
+OBJ_CASTLE_16
+OBJ_CASTLE_17
+-> Created by 'Pixel_Poem'
+-> https://pixel-poem.itch.io/dungeon-assetpuck
+-> Some tiles have been adapted
+
+FACES (0-24)
 -> '32x32 Fantasy portrait set' by CobraLad
 -> License: https://creativecommons.org/licenses/by/3.0/
 -> See: https://cobralad.itch.io/fantasy-portraits-32x32
 -> Graphics have been resized to 16x16
 -> Tiles have been merged into one file
+
+KNIGHT
+-> Created by 'JumpButton'
+-> Twitter @Jump_Button
+-> https://jumpbutton.itch.io/girlknightasset
+-> Some tiles have been adapted
 
 --- Music ---
 SNG_THEME.mp3
@@ -104,17 +120,18 @@ SND_UI_INPUT
 SND_YOUR_TURN
 -> 'Level Up' by Joth see opengameart.org/users/joth
 
-SDN_KAREN_*
+SND_FEMALE_*
+SND_MALE_*
 -> Super Dialogue Audio Pack by Dillon Becker. This work is licensed under CC BY 4.0
 -> https://bckr.itch.io/sdap
 -> https://dillonbecker.com/
 -> https://creativecommons.org/licenses/by/4.0/
 
 --- Maps ---
-none
+Spikeone
 
 --- Campaign ---
-none
+Spikeone
 
 --- Other ---
 none

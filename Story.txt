@@ -1,4 +1,106 @@
-10 Missions
+12 Missions
+
+Base Story:
+- Journey of a hero who battles his own mind
+- in general this is a circular story
+- In the beginning, sets of for a good cause
+- thats where the cycle begins
+- dragged further into the task (whatever the task is), good behavior aggravates
+- people, companions are met, who present the good
+- in the beginning they die by mere accidents (or something that at first feels and seems inevitable)
+- later those are actually killed by the own hand
+- the journey is about a mind getting darker and darker
+- where the darkness tries to become the dominant part
+- yet the journey path leads to the beginning, the consciousness
+- which then again is still stronger
+- this means the initial waking up is actually the moment the mind actually drifts away into darkness
+- this also means, that any mission is an abstraction on how far would you go for a certain goal
+- on this way, there are certain "hidden" hints that can explain this
+
+1 Dednim'Krad (x)
+- actually means dark-minded
+- starts on a ship (where this mind-journey begins)
+- Hint: Captain actually greets with "Ah, you are asleep" instead of awake
+- Task: investigate problems in Dednim'Krad
+- when arriving, city is under attack
+- defend city first
+- find out who attacked (clear out bandit camps, build some economy)
+- after camps have been cleared, need to search why/how 
+
+2 Dark Path
+- this is about walking through an bandit infested forest
+- here at some point next to a house, one meets the first good mind
+- Hint: Oh, it's you again, which tells, that this isn't the first time, but is ignored by the hero
+- Task: follow marauding bandit troops
+- find some units in the forest, where one needs to use some helpfull army to actually kite away another army
+- this is more a tactical movement map
+- whenever the player fails, the mission ends with "I should have thought of that!"
+
+3 Feral Forest 
+- there is a bandit base around
+- Task: Destroy the bandit camp
+- there is a friendly village to the left (own buildings)
+- the new friend tells you about it
+- Hint: When you say, you will help them, the friend answers "Sure, you never do"
+- since the way goes left and right (left village, right bandit camp) it doesn't matter which path you take
+- as soon as you create an army and start roaming forth, you trigger a hostile army spawn who will destroy the village
+- at this point the hero still says/thinks he could have saved them
+- Hint: Friend tells, That sometimes you need to focus and can't change something, as hard as you think about it
+- rebuild village for resources (as soon as x mines have been built, bandits will also start attacking, before that armies will just spawn and block the road
+- camp has been destroyed, win
+
+4 Neighbors (x)
+- There is a small village
+- They are "friendly"
+- Path is blocked by a unit (since they are in fact hostile, the player has to attack the unit)
+- Task: Find a way to continue
+- This triggers the hostile actions (allowing the AI to play)
+- Hint: Friend says sometimes you don't only take some lives but also lose friends / or maybe rather something about losing someone without death
+- As soon as the way is cleared, hostile armies spawn in the start base
+- This happens by spawning some armies on previous trees or mountains (maybe just alter MMAP for this)
+- They are just high level, thus destroy all buildings -> only one player army needs to finish the way, but defending wont work (probably)
+- After losing the HQ, the mission ends
+- Friend is captured (thus lost)
+
+5 Soul Rescue
+- This is rather about saving your own soul than someone elses
+- Your friend is captured
+- A small prison, surrounded by a bandit camp
+- Task: Free your friend
+- Maybe this one should have two camps
+- You can decide to attack either, then the friend spawns in the other camp
+- That way it wont matter which you take, but always triggers "you take the easy road" event, which actually spawns strong units on the other side
+- Hint: A strong unit spawns to kill your friend -> when he dies, he tells you, that you lost him years ago
+- You still need to fight your way through
+- It's a trap, you get caught and into a Prison
+
+6 Prosin
+- The hint is already in the title, since it's Prison
+- You wake up in a small cell
+- A voice, probably in another cell, tells you, you should break out and help both of you
+- Asking for the name: It's Prosin, how long he has been there, always (since everybody has a dark side)
+- This is just the testmap a bit improved and nicely done
+- Uppon leaving, there is a new grave next to the path
+- Clicking on it: "Here lies Uoy"
+
+7 Team (x)
+- Since Prosin helped you (actually did nothing but hey), he suggests working together
+- Hint: Text says maybe we could turn this world by 180 degree (which then explains going to the dark side)
+- He wants help freeing his homelands
+- so this is just a mission to kill some people
+- There is one base to destroy
+
+8 Cheer down
+- 
+
+9 Turn around
+- Thats just like a U-Turn map
+
+10 Maet
+11 Neighbors
+- Prosin dies
+
+12 Dark'Minded
 
 Base Story:
 - Heroine: Taliz Orah
