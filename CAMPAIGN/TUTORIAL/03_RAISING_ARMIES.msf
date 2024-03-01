@@ -1,0 +1,204 @@
+// This changes settings of the game
+// event        eventID     groupID
+!ON_LOAD_MAP    |0          |0
+// action   groupID     state
+@SET_FOW    |0          |1
+
+// event    eventID     groupID
+!ON_START   |1          |1
+
+// action    groupID playerID  bld state x   y
+// Towers (Player 1)
+@ADD_BUILDING|1      |1       |7   |1    |6  |5
+@ADD_BUILDING|1      |1       |7   |1    |7  |8
+// Mines (Player 1)
+@ADD_BUILDING|1      |1       |4   |1    |3  |1
+@ADD_BUILDING|1      |1       |4   |1    |4  |2
+// Sawmills (Player 1)
+@ADD_BUILDING|1      |1       |5   |1    |3  |3
+@ADD_BUILDING|1      |1       |5   |1    |5  |3
+// Towers (Player 2)
+@ADD_BUILDING|1      |2       |7   |1    |2  |9
+@ADD_BUILDING|1      |2       |7   |1    |9  |2
+// Mines (Player 2)
+@ADD_BUILDING|1      |2       |4   |1    |1  |9
+@ADD_BUILDING|1      |2       |4   |1    |10 |2
+// Sawmills (Player 2)
+@ADD_BUILDING|1      |2       |5   |1    |2  |10
+@ADD_BUILDING|1      |2       |5   |1    |10 |3
+
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |1      |2          |4  |9  |1
+// action   groupID HP
+@SET_ARMY_HP|1      |1
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |1      |2          |9  |4  |1
+// action   groupID HP
+@SET_ARMY_HP|1      |1
+
+//action                groupID player  building    allow
+//HUM_HOUSE
+@SET_ALLOW_BUILDING     |1      |1      |1          |0
+//HUM_FARM
+@SET_ALLOW_BUILDING     |1      |1      |2          |0
+//HUM_FIELD
+@SET_ALLOW_BUILDING     |1      |1      |3          |0
+//HUM_BARRACKS
+@SET_ALLOW_BUILDING     |1      |1      |6          |0
+//action            groupID allow
+@SET_ALLOW_DAY      |1      |0
+
+//          groupID SoundID
+@PLAY_SOUND |1      |SND_MALE_THROAT
+// action       groupID     Trigggers   Type    close   Icon            Text
+@SHOW_DIALOGUE  |1          |2          |LEFT  |0      |FACE_2          |Welcome to the raising armies tutorial! \n \n In this tutorial you will explore some advanced mechanics and learn more about army recruitment.
+@SHOW_DIALOGUE  |2          |3          |LEFT  |0      |FACE_2          |As you can see, you start with a small base this time. You might wonder why there isn't a mine next to the gold on the left?
+// action       groupID x   y   graphic
+@SET_OVERLAY    |3     |1  |3  |SELECTION_TILE_INVALID
+// action       groupID     Trigggers   Type    close   Icon            Text
+@SHOW_DIALOGUE  |3          |4          |RIGHT |0      |LAYER_RIVER_08  |Thats because there is a mechanic called continent. You can only build on areas, that you could reach with an army. This simply means, if there is not path available, you can't build. However, it's not important how long such path would be - or if you occupied it.
+// action       groupID x   y   graphic
+@SET_OVERLAY    |4     |8  |3  |SELECTION_TILE_VALID
+// action       groupID     Trigggers   Type    close   Icon            Text
+@SHOW_DIALOGUE  |4          |5          |RIGHT |0      |LAYER_RIVER_14  |Although you may not build a building on a bridge, you can still walk across it, thus you'd be able to build a mine next to the other gold spot on the right.
+@SHOW_DIALOGUE  |5          |6          |LEFT  |0      |FACE_2          |But there is more to keep in mind when building.
+@SHOW_DIALOGUE  |6          |7          |RIGHT |0      |HUM_UNIT_2      |There are hostile units next to our base, stationed on the bridges. Since our workers fear them, no one dares to build two tiles around hostile units.
+// action       groupID x   y   graphic
+@SET_OVERLAY    |7     |7  |2  |SELECTION_TILE_INVALID
+@SET_OVERLAY    |7     |8  |2  |SELECTION_TILE_INVALID
+@SET_OVERLAY    |7     |9  |2  |SELECTION_TILE_INVALID
+@SET_OVERLAY    |7     |7  |3  |SELECTION_TILE_INVALID
+@SET_OVERLAY    |7     |8  |3  |SELECTION_TILE_INVALID
+@SET_OVERLAY    |7     |9  |3  |SELECTION_TILE_INVALID
+@SET_OVERLAY    |7     |7  |4  |SELECTION_TILE_INVALID
+@SET_OVERLAY    |7     |8  |4  |SELECTION_TILE_INVALID
+@SET_OVERLAY    |7     |7  |5  |SELECTION_TILE_INVALID
+@SET_OVERLAY    |7     |8  |5  |SELECTION_TILE_INVALID
+@SET_OVERLAY    |7     |9  |5  |SELECTION_TILE_INVALID
+@SET_OVERLAY    |7     |10 |5  |SELECTION_TILE_INVALID
+@SET_OVERLAY    |7     |7  |6  |SELECTION_TILE_INVALID
+@SET_OVERLAY    |7     |8  |6  |SELECTION_TILE_INVALID
+@SET_OVERLAY    |7     |9  |6  |SELECTION_TILE_INVALID
+@SET_OVERLAY    |7     |10 |6  |SELECTION_TILE_INVALID
+// action       groupID     Trigggers   Type    close   Icon                    Text
+@SHOW_DIALOGUE  |7          |8          |LEFT  |0      |FACE_2                  |I marked all spots that are blocked by the unit on the right.
+@SHOW_DIALOGUE  |8          |9          |RIGHT |0      |SELECTION_TILE_INVALID  |Normally this blocked area is not visible, so keep that in mind. Even if a soldier is not visible to you, or is across a river or behind a tree, the building spots are blocked.
+@SHOW_DIALOGUE  |9          |10         |LEFT  |0      |FACE_2                  |Enough talking, we should recruit some units. For this purpose, we need to construct additional building units. Let's start with a house.
+@SHOW_DIALOGUE  |10         |11         |RIGHT |0      |HUM_HOUSE_1_0           |The house: \n \n A house produces 4x people.
+@SHOW_DIALOGUE  |11         |12         |LEFT  |1      |FACE_2                  |Although the headquarter also produces people, we should build at least one more house. \n \n Task: Build 1 house.
+
+// action       groupID x   y   graphic
+@SET_OVERLAY    |12    |1  |3  |
+@SET_OVERLAY    |12    |7  |2  |
+@SET_OVERLAY    |12    |8  |2  |
+@SET_OVERLAY    |12    |9  |2  |
+@SET_OVERLAY    |12    |7  |3  |
+@SET_OVERLAY    |12    |8  |3  |
+@SET_OVERLAY    |12    |9  |3  |
+@SET_OVERLAY    |12    |7  |4  |
+@SET_OVERLAY    |12    |8  |4  |
+@SET_OVERLAY    |12    |7  |5  |
+@SET_OVERLAY    |12    |8  |5  |
+@SET_OVERLAY    |12    |9  |5  |
+@SET_OVERLAY    |12    |10 |5  |
+@SET_OVERLAY    |12    |7  |6  |
+@SET_OVERLAY    |12    |8  |6  |
+@SET_OVERLAY    |12    |9  |6  |
+@SET_OVERLAY    |12    |10 |6  |
+//action                groupID player  building    allow
+//HUM_HOUSE
+@SET_ALLOW_BUILDING     |12      |1      |1          |1
+// event            eventID groupID playerID    buildingID
+!ON_BUILDING_PLACED |2     |20     |1          |1
+
+// action       groupID     Trigggers   Type    close   Icon            Text
+@SHOW_DIALOGUE  |20         |21         |LEFT  |0      |FACE_2          |Great, one step closer to our first army!
+@SHOW_DIALOGUE  |21         |22         |RIGHT |0      |ICON_PEOPLE     |People are treated like a resource but work a bit differently. People are not produced and added to the stock each day, rather it's your housings that determine the maximum stock capacity available to you.
+@SHOW_DIALOGUE  |22         |23         |LEFT  |0      |FACE_2          |Since we will have 8 people, we could uphold 2 armies, or rather 2 levels of armies. But levels are covered in another tutorial. when an army is defeated, all used people are available the next day. Don't worry, if you lose a house your armies won't die.
+@SHOW_DIALOGUE  |23         |24         |RIGHT |0      |ICON_FOOD       |Next we should start producing food, since thats the second resource we need to recruit an army. To do so, we need fields, but fields can only be built around farms.
+@SHOW_DIALOGUE  |24         |25         |RIGHT |0      |HUM_FARM_1_0    |The farm: \n \n Allows building fields next to it.
+@SHOW_DIALOGUE  |25         |26         |LEFT  |1      |FACE_2          |Since you could build a field on each of the 8 tiles surrounding the farm, you should choose the spot for the building with care. \n \n Task: build 1x farm.
+//action                groupID player  building    allow
+//HUM_FARM
+@SET_ALLOW_BUILDING     |26      |1      |2          |1
+
+// event            eventID groupID playerID    buildingID
+!ON_BUILDING_PLACED |3     |30     |1          |2
+//action                groupID player  building    allow
+//HUM_FARM
+@SET_ALLOW_BUILDING     |30      |1      |2          |0
+// action       groupID     Trigggers   Type    close   Icon            Text
+@SHOW_DIALOGUE  |30         |31         |LEFT  |1      |FACE_2          |We can't do more right now until the farm is finished. \n \n Task: continue until construction of the farm is completed.
+//action        groupID allow
+@SET_ALLOW_DAY  |31     |1
+
+// TODO: I dislike not requiring the player to build fields
+// event            eventID     groupID playerID    typeID  count   done    sites
+!ON_BUILDING_COUNT  |4          |40     |1          |2      |1      |1      |0
+// action       groupID     Trigggers   Type    close   Icon            Text
+@SHOW_DIALOGUE  |40         |41         |LEFT  |0      |FACE_2          |Since the farm has been built, we are now able to place some fields around.
+@SHOW_DIALOGUE  |41         |42         |RIGHT |0      |HUM_FIELD_1_0   |The field: \n \n A field produces 2x food.
+@SHOW_DIALOGUE  |42         |43         |LEFT  |1      |FACE_2          |Fields are cheap and fast to build, but their production rate is low. Farms also wear off every round. This means you have to rebuild them often. \n \n Task: Build at least 1x field.
+
+//action            groupID player  building    allow
+//HUM_FIELD
+@SET_ALLOW_BUILDING |43     |1      |3          |1
+//action            groupID allow
+@SET_ALLOW_DAY      |43     |0
+
+// event            eventID groupID playerID    buildingID
+!ON_BUILDING_PLACED |5     |50     |1          |3
+// event            eventID     groupID playerID    typeID  count   done    sites
+//!ON_BUILDING_COUNT  |5          |50     |1          |3      |1      |1      |1
+// action       groupID     Trigggers   Type    close   Icon            Text
+@SHOW_DIALOGUE  |50         |51         |RIGHT |0      |HUM_FARM_1_0    |If you didn't do that already, you can also click on the farm to build fields around it, but you can't decide where they are placed.
+@SHOW_DIALOGUE  |51         |52         |LEFT  |0      |FACE_2          |The next building required for recruiting an army is the barracks. It can be built anywhere and allows recruiting two tiles around.
+@SHOW_DIALOGUE  |52         |53         |RIGHT |0      |HUM_BARRACKS_1_0|The barracks: \n \n Allows recruiting armies next to it.
+@SHOW_DIALOGUE  |53         |54         |LEFT  |0      |FACE_2          |When placing your barracks keep in mind, that building it close to enemies would allow a quick assault. At the same moment building it far away means your armies have to march far.
+@SHOW_DIALOGUE  |54         |55         |LEFT  |1      |FACE_2          |In this mission the enemy won't attack you, so feel free to build the barracks anywhere you'd like to. \n \n Task: Build 1x barracks.
+
+//action            groupID player  building    allow
+//HUM_FARM
+@SET_ALLOW_BUILDING |55      |1      |2          |1
+//HUM_BARRACKS
+@SET_ALLOW_BUILDING |55      |1      |6          |1
+//action        groupID allow
+@SET_ALLOW_DAY  |55     |0
+
+// event            eventID groupID playerID    buildingID
+!ON_BUILDING_PLACED |6     |60     |1          |6
+// action       groupID     Trigggers   Type    close   Icon            Text
+@SHOW_DIALOGUE  |60         |61         |RIGHT |1      |HUM_BARRACKS_1_0|You can recruit an army only next to a barracks. Therefore, we need to finish that building first!
+//action        groupID allow
+@SET_ALLOW_DAY  |60     |1
+
+// event            eventID     groupID playerID    typeID  count   done    sites
+!ON_BUILDING_COUNT  |7          |70     |1          |6      |1      |1      |0
+// action       groupID     Trigggers   Type    close   Icon            Text
+@SHOW_DIALOGUE  |70         |71         |LEFT  |0      |FACE_2          |Now listen closely, as the following is vital.
+@SHOW_DIALOGUE  |71         |72         |RIGHT |0      |HUM_BARRACKS_1_0|You can recruit armies only close to barracks. The maximum distance is two tiles, just as much as an army blocks.
+@SHOW_DIALOGUE  |72         |73         |LEFT  |0      |FACE_2          |Remember all the buildings we built? To recruit an army you need them all except wood. Who would like to fight with a stick right?
+@SHOW_DIALOGUE  |73         |74         |RIGHT |0      |ICON_WARES      |To recruit one army we need the following: \n \n Gold:  40x (once) \n Food:  50x (once) \n People: 4x (while active)
+@SHOW_DIALOGUE  |74         |75         |RIGHT |0      |ICON_ARMIES     |Just like building you have to switch to the army management window first.
+@SHOW_DIALOGUE  |75         |76         |RIGHT |0      |ICON_PLUS       |Click on the plus icon to enter army building mode and place an army. This works the same as with buildings, but now you need to place your army close to a barracks rather than a tower.
+@SHOW_DIALOGUE  |76         |77         |LEFT  |1      |FACE_2          |Fun fact: you can build an army in areas which are still hidden by the fog of war. \n \n Task: recruit 1x army.
+
+// event        eventID groupID playerID    sumArmies
+!ON_ARMY_RAISED |8      |80     |1          |-1
+// action       groupID playerID    allow
+@SET_ALLOW_ARMY |80     |1          |0
+// action       groupID     Trigggers   Type    close   Icon                    Text
+@SHOW_DIALOGUE  |80         |81         |LEFT  |0      |FACE_2                  |Now there is a lot you need to know about armies, but this will be covered in the next tutorial.
+@SHOW_DIALOGUE  |81         |82         |RIGHT |0      |ICON_ARMIES             |You can view your armies in the army management window. There you can see any army you have and select it. You can also select it in the game world.
+@SHOW_DIALOGUE  |82         |83         |LEFT  |0      |FACE_2                  |There are multiple actions an army could perform. Any of those actions require movement points, or short MP. If there are no MP left, your army can't perform any action.
+@SHOW_DIALOGUE  |83         |84         |RIGHT |0      |SELECTION_TILE_INVALID  |Any army that has been recruited can't perform any action in the same round since it won't have any MP.
+@SHOW_DIALOGUE  |84         |85         |RIGHT |0      |SELECTION_TILE_MOVE     |Tomorrow your army will be able to move...
+@SHOW_DIALOGUE  |85         |86         |RIGHT |0      |SELECTION_TILE_ATTACK   |... or attack. Each action requires at least 1 MP. Attacking uses all your MP while moving requires 1 MP per step. Each army has a maximum of 2 MP.
+@SHOW_DIALOGUE  |86         |87         |LEFT  |1      |FACE_2                  |Let's show those bandits how fighting is done! \n \n Task: Start a fight.
+
+// event        eventID groupID     playerId1   playerId2   winnerId
+!ON_ARMY_BATTLE |9      |90         |-1         |-1         |-1
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |90         |91         |LEFT  |1      |FACE_2  |We showed them! Just remember, this tutorial is merely about recruiting an army and doesn't cover all basics.
+// action       groupID
+@GAME_WIN       |91

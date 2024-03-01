@@ -1,0 +1,503 @@
+// This changes settings of the game
+// event        eventID     groupID
+!ON_LOAD_MAP    |0          |0
+// action   groupID     state
+@SET_FOW    |0          |1
+
+// event    eventID     groupID
+!ON_START   |1          |1
+
+//1 - movement general
+//2 - movement objects
+//3 - movement buildings
+//4 - simple fight (both survive)
+//5 - simple fight (both die)
+//6 - simple fight (win)
+//7 - simple fight (loose)
+//8 - simple fight building (done)
+//9 - simple fight building (construction)
+//10- simple fight building + army (targeting)
+//11- merge army
+//12- 3 soldiers attack 1 strong army
+//13- 3 soldiers merge and attack 1 strong army
+
+//action            groupID allow
+@SET_ALLOW_DAY      |1      |0
+
+// action       groupID eventID eventState
+@SET_EVENT_STATE|1      |3      |0
+@SET_EVENT_STATE|1      |4      |0
+@SET_EVENT_STATE|1      |9      |0
+@SET_EVENT_STATE|1      |10     |0
+@SET_EVENT_STATE|1      |11     |0
+@SET_EVENT_STATE|1      |12     |0
+@SET_EVENT_STATE|1      |13     |0
+@SET_EVENT_STATE|1      |14     |0
+@SET_EVENT_STATE|1      |15     |0
+@SET_EVENT_STATE|1      |16     |0
+@SET_EVENT_STATE|1      |17     |0
+@SET_EVENT_STATE|1      |18     |0
+@SET_EVENT_STATE|1      |19     |0
+@SET_EVENT_STATE|1      |20     |0
+@SET_EVENT_STATE|1      |21     |0
+@SET_EVENT_STATE|1      |22     |0
+@SET_EVENT_STATE|1      |23     |0
+@SET_EVENT_STATE|1      |24     |0
+//@SET_EVENT_STATE|1      |25     |0
+@SET_EVENT_STATE|1      |26     |0
+
+// 1
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |1      |1          |2  |1  |1
+// action   groupID MP
+@SET_ARMY_MP|1      |2
+// action   groupID x   y
+@CENTER_VIEW |1      |2  |2
+//          groupID SoundID
+@PLAY_SOUND |1      |SND_MALE_THROAT
+// action       groupID     Trigggers   Type    close   Icon            Text
+@SHOW_DIALOGUE  |1          |2          |LEFT  |0      |FACE_2          |Welcome to the commanding armies tutorial! \n \n In this tutorial we will explore on how to use armies, their limitations and some more stuff.
+@SHOW_DIALOGUE  |2          |3          |LEFT  |0      |FACE_2          |For that armies are added and you should just follow the instructions.
+@SHOW_DIALOGUE  |3          |4          |LEFT  |0      |FACE_2          |Let's start with something simple: army movement. For starters, selecting an army will reveal some visual information on the possible actions on the surrounding tiles.
+@SHOW_DIALOGUE  |4          |5          |LEFT  |0      |FACE_2          |There are actually four different actions: \n \n No action \n Move \n Attack \n Merge
+@SHOW_DIALOGUE  |5          |6          |RIGHT |0      |SELECTION_TILE_INVALID  |This means that the selected army can't do anything on that tile. This can have multiple reasons. Either the army can't move to that spot, since it is blocked by an object or the army doesn't have action points left.
+@SHOW_DIALOGUE  |6          |7          |LEFT  |0      |FACE_2          |Action points or movement points are used up by different actions. We will start with movement.
+@SHOW_DIALOGUE  |7          |8          |RIGHT |0      |SELECTION_TILE_MOVE     |Armies can move to any tile without blocking obstacles. Examples of blocking obstacles include terrain features, large objects, or hostile entities.
+@SHOW_DIALOGUE  |8          |9          |LEFT  |0      |FACE_2          |Each movement costs 1 action point. An army has a maximum of 2 action points. This means, an army can move 2 tiles per round. Each round, all action points are replenished.
+@SHOW_DIALOGUE  |9          |1000       |LEFT  |1      |FACE_2          |Now select your army and move it 1 tile further.
+
+// event    eventID groupID playerID    x   y
+!ON_ARMY_AT |2      |20     |1          |2  |2
+// action           groupID eventID eventState
+@SET_EVENT_STATE    |20     |3      |1
+// action           groupID eventID eventState
+@SET_EVENT_STATE    |20     |4     | 1
+// action       groupID     Trigggers   Type    close   Icon            Text
+@SHOW_DIALOGUE  |20         |21         |LEFT  |0      |FACE_2          |Great, if you select your army again, you will notice it only got 1 out of 2 action points left.
+@SHOW_DIALOGUE  |21         |1000       |LEFT  |1      |FACE_2          |Now select your army and move it anywhere. You will notice, that you now have two options.
+// event    eventID groupID playerID    x   y
+!ON_ARMY_AT |3      |40     |1          |2  |1
+// event    eventID groupID playerID    x   y
+!ON_ARMY_AT |4      |40     |1          |2  |3
+
+// action       groupID     Trigggers   Type    close   Icon            Text
+@SHOW_DIALOGUE  |40         |41         |LEFT  |0      |FACE_2          |Now your army won't have any action points left. Therefore, it won't be able to move this round anymore.
+@SHOW_DIALOGUE  |41         |42         |LEFT  |0      |FACE_2          |Any further movement for that army will be blocked for this tutorial.
+// action   groupID x   y
+@CENTER_VIEW |42    |6  |2
+// action       groupID x   y   L1  L2  L3  Move    Continent
+@UPDATE_WORLD   |42     |2  |1  |   |   |   |0      |
+@UPDATE_WORLD   |42     |2  |3  |   |   |   |0      |
+
+
+// 2
+// action       groupID     Trigggers   Type    close   Icon            Text
+@SHOW_DIALOGUE  |42         |43         |LEFT  |0      |FACE_2          |There is more to keep in mind when moving armies.
+// action   groupID x   y
+@CENTER_VIEW |43    |6  |2
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |43     |1          |6  |1  |1
+// action   groupID MP
+@SET_ARMY_MP|43     |2
+// action       groupID     Trigggers   Type    close   Icon            Text
+@SHOW_DIALOGUE  |43         |44         |RIGHT  |0      |OBJ_GOLD_01    |As already mentioned, armies are able to move over some objects such as gold, for example.
+@SHOW_DIALOGUE  |44         |1000       |LEFT   |1      |FACE_2         |We should try it out.
+// event    eventID groupID playerID    x   y
+!ON_ARMY_AT |5      |50     |1          |6  |2
+
+// U,R,D,L
+// 1,2,4,8
+// action       groupID x   y   L1  L2  L3  Move    Continent
+@UPDATE_WORLD   |50     |6  |2  |   |   |   |4      |
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |50         |51         |LEFT   |0      |FACE_2 |Now your army is at the same spot as the gold ore. The north movement is blocked for now.
+@SHOW_DIALOGUE  |51         |52         |LEFT   |0      |FACE_2 |Maybe you already noticed, but either objects, like the trees on the left, or terrain, like the water on the right, can block movement.
+@SHOW_DIALOGUE  |52         |53         |LEFT   |0      |FACE_2 |It doesn't matter where your army stands, there is no tactical advantage, or disadvantage.
+@SHOW_DIALOGUE  |53         |1000       |RIGHT  |1      |OBJ_BUSH_03    |Move your army into the bushes for now.
+
+// 3
+// event    eventID groupID playerID    x   y
+!ON_ARMY_AT |6      |60     |1          |6  |3
+// action       groupID x   y   L1  L2  L3  Move    Continent
+@UPDATE_WORLD   |60     |6  |3  |   |   |   |0      |
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |60         |61         |LEFT   |0      |FACE_2 |I will block that army for now, so we can concentrate on the next task.
+// action   groupID x   y
+@CENTER_VIEW |61    |10 |2
+// action    groupID playerID   bld  state x   y
+@ADD_BUILDING|61     |1         |5   |0.1  |10 |2
+@ADD_BUILDING|61     |1         |4   |1    |10 |3
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |61     |1          |10 |1  |1
+// action   groupID MP
+@SET_ARMY_MP|61     |2
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |61         |62         |RIGHT  |0      |HUM_SAWMILL_1_1 |Just like objects, you can pass building sites. But beware, this is only possible for your buildings.
+@SHOW_DIALOGUE  |62         |1000       |LEFT   |1      |FACE_2 |Try it out!
+
+// event    eventID groupID playerID    x   y
+!ON_ARMY_AT |7      |70     |1          |10 |2
+// action       groupID x   y   L1  L2  L3  Move    Continent
+@UPDATE_WORLD   |70     |10 |2  |   |   |   |4      |
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |70         |71         |LEFT   |0      |FACE_2 |Now that your army is on top of a building, you may wonder how to select either one.
+@SHOW_DIALOGUE  |71         |72         |LEFT   |0      |FACE_2 |Pretty simple, just select the tile. On the right you will now have the option to switch between either the building or the army.
+@SHOW_DIALOGUE  |72         |1000       |LEFT   |1      |FACE_2 |I blocked the north movement, so select your army and move it south.
+
+// 4
+// event    eventID groupID playerID    x   y
+!ON_ARMY_AT |8      |80     |1          |10 |3
+// action       groupID x   y   L1  L2  L3  Move    Continent
+@UPDATE_WORLD   |80     |10 |3  |   |   |   |0      |
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |80         |81         |LEFT   |0      |FACE_2 |You see, armies can move over and onto buildings and building sites. As always, this army is blocked.
+// action   groupID x   y
+@CENTER_VIEW |81    |14 |2
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |81     |1          |14 |1  |1
+// action   groupID MP
+@SET_ARMY_MP|81     |2
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |81     |2          |14 |2  |1
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |81         |82         |LEFT   |0      |FACE_2 |All armies are the same when created. They start with the following attributes: \n Hitpoint: 3 \n Action Points: 2 \n Level: 1 \n Damage: 2
+@SHOW_DIALOGUE  |82         |83         |LEFT   |0      |FACE_2 |If the health points of an army are reduced to 0, the army perishes. There is no way to heal an army, any incurred damage is irreversible.
+@SHOW_DIALOGUE  |83         |84         |LEFT   |0      |FACE_2 |Action points are used for all actions an army performs. They regenerate each round for any army.
+@SHOW_DIALOGUE  |84         |85         |LEFT   |0      |FACE_2 |Level is just the number of merged armies, but this will be explained later.
+@SHOW_DIALOGUE  |85         |86         |LEFT   |0      |FACE_2 |The base damage of an army is 2. That damage is multiplied by the level, which means a level 2 army inflicts 4 damage, level 10 armies inflict 20 damage, and so on.
+@SHOW_DIALOGUE  |86         |1000       |RIGHT  |1      |SELECTION_TILE_ATTACK|But let's select your army and attack the hostile army. You will notice the attack option rather than the move option we had before.
+// action       groupID eventID eventState
+@SET_EVENT_STATE|86     |9      |1
+
+// event        eventID groupID     playerId1   playerId2   winnerId
+!ON_ARMY_BATTLE |9      |90         |-1         |-1         |-1
+// action       groupID x   y   L1  L2  L3  Move    Continent
+@UPDATE_WORLD   |90     |14 |1  |   |   |   |0      |
+
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |90         |91         |LEFT   |0      |FACE_2 |This might seem a bit boring, since not much happened. But let's break down what happened.
+@SHOW_DIALOGUE  |91         |92         |LEFT   |0      |FACE_2 |Two armies fought and both are level 1.
+@SHOW_DIALOGUE  |92         |93         |LEFT   |0      |FACE_2 |Your army had 2 action points which are now exhausted. When a army fights, it always uses up all it's action points, preventing hit and run mechanics.
+@SHOW_DIALOGUE  |93         |94         |LEFT   |0      |FACE_2 |The hostile army now has only 1 Hitpoint left. That's because you dealt 2 damage and it started with 3 Hitpoint.
+@SHOW_DIALOGUE  |94         |95         |LEFT   |0      |FACE_2 |On the other hand your army has been damaged as well, but lost only 1 Hitpoint.
+@SHOW_DIALOGUE  |95         |96         |LEFT   |0      |FACE_2 |That's because an army will always defend with half it's damage potential. This means that the hostile level 1 army inflicted 1 (level) * 2 (damage) * 0.5 (defend) = 1 damage.
+
+// 5
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |96     |1          |19 |1  |1
+// action   groupID HP
+@SET_ARMY_HP|96     |1
+// action   groupID MP
+@SET_ARMY_MP|96     |2
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |96     |2          |18 |1  |1
+// action   groupID HP
+@SET_ARMY_HP|96     |2
+// action   groupID x   y
+@CENTER_VIEW |96    |18 |2
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |96         |97         |LEFT   |0      |FACE_2 |Let's swap roles and pretend you own the army with 1 Hitpoint left.
+@SHOW_DIALOGUE  |97         |1000       |LEFT   |1      |FACE_2 |So just attack the enemy as before.
+// action       groupID eventID eventState
+@SET_EVENT_STATE|97     |10     |1
+
+// event        eventID groupID     playerId1   playerId2   winnerId
+!ON_ARMY_BATTLE |10     |100        |-1         |-1         |-1
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |100        |101        |LEFT   |0      |FACE_2 |Did you notice, you lost your army but the enemy as well?
+@SHOW_DIALOGUE  |101        |102        |LEFT   |0      |FACE_2 |It's simple - two armies cancel each other out. But only if they both attack each other the moment they can.
+@SHOW_DIALOGUE  |102        |103        |LEFT   |0      |FACE_2 |Now imagine the following: your enemy forgot to counter attack you.
+
+// 6
+// action   groupID x   y
+@CENTER_VIEW |103   |22 |2
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |103    |1          |21 |1  |1
+// action   groupID HP
+@SET_ARMY_HP|103    |2
+// action   groupID MP
+@SET_ARMY_MP|103    |2
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |103    |2          |22 |1  |1
+// action   groupID HP
+@SET_ARMY_HP|103    |1
+
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |103        |104        |LEFT   |0      |FACE_2 |If you think about it, you know what's about to happen.
+@SHOW_DIALOGUE  |104        |1000       |LEFT   |1      |FACE_2 |But let's put it to a test, fight!
+// action       groupID eventID eventState
+@SET_EVENT_STATE|104    |11     |1
+
+// event        eventID groupID     playerId1   playerId2   winnerId
+!ON_ARMY_BATTLE |11     |110        |-1         |-1         |-1
+// action       groupID x   y   L1  L2  L3  Move    Continent
+@UPDATE_WORLD   |110    |21 |1  |   |   |   |0      |
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |110        |111        |LEFT   |0      |FACE_2 |You won, how expected this was. But as you may noticed, your army stayed at it's current position and did not advance.
+@SHOW_DIALOGUE  |111        |1000       |LEFT   |1      |FACE_2 |Just for the sake of completion, let's try out what happens when you loose a battle.
+
+// 7
+// action   groupID x   y
+@CENTER_VIEW|111    |26 |2
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |111    |1          |26 |2  |1
+// action   groupID HP
+@SET_ARMY_HP|111    |1
+// action   groupID MP
+@SET_ARMY_MP|111    |2
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |111    |2          |26 |3  |1
+// action   groupID HP
+@SET_ARMY_HP|111    |3
+// action       groupID eventID eventState
+@SET_EVENT_STATE|111     |12     |1
+
+// event        eventID groupID     playerId1   playerId2   winnerId
+!ON_ARMY_BATTLE |12     |120        |-1         |-1         |-1
+
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |120        |121        |LEFT   |0      |FACE_2 |The army is lost. Sometimes it is better to attack and inflict maximum damage. In other cases you may want to block a tile to buy some time.
+@SHOW_DIALOGUE  |121        |122        |LEFT   |0      |FACE_2 |Now let's move on to something more interesting. You can also attack buildings. In fact you need to in order to win the game.
+
+// 8
+// action   groupID x   y
+@CENTER_VIEW|122    |30 |2
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |122    |1          |30 |1  |1
+// action   groupID MP
+@SET_ARMY_MP|122    |2
+// action       groupID playerID  bld state x   y
+@ADD_BUILDING   |122    |2       |4   |1    |30 |2
+
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |122        |123        |RIGHT  |0      |HUM_HQ_2_0|When the Headquater of a player is destroyed, they lose defeated. So you need to defend yours at all cost!
+@SHOW_DIALOGUE  |123        |124        |LEFT   |0      |FACE_2 |Damage calculation for attacking buildings uses a different formula.
+@SHOW_DIALOGUE  |124        |125        |RIGHT  |0      |HUM_MINE_2_0|Take this mine for example. It's not yours, so you can attack it.
+@SHOW_DIALOGUE  |125        |126        |LEFT   |0      |FACE_2 |Damage to buildings is calculated according to the following formula: \n \n Damage * Level * Action Points \n So in our case: 2 * 1 * 2 = 4
+@SHOW_DIALOGUE  |126        |1000       |LEFT   |1      |FACE_2 |Let's put that to test.
+
+// action       groupID eventID eventState
+@SET_EVENT_STATE|126    |13     |1
+// event                eventID groupID     playerId    bld attackerId
+!ON_BUILDING_ATTACKED   |13     |130        |-1         |-1 |-1
+
+// action       groupID x   y   L1  L2  L3  Move    Continent
+@UPDATE_WORLD   |130    |30 |1  |   |   |   |0      |
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |130        |131        |LEFT   |0      |FACE_2 |That's been quite some damage! Since it is not possible to repair buildings, you would sooner or later destroy that building.
+
+// 9
+// action   groupID x   y
+@CENTER_VIEW|131    |34 |2
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |131    |1          |34 |1  |1
+// action   groupID MP
+@SET_ARMY_MP|131    |2
+// action       groupID playerID  bld state x   y
+@ADD_BUILDING   |131    |2       |4   |0.5  |34 |2
+
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |131        |132        |LEFT   |0      |FACE_2 |But there is more to keep in mind.
+@SHOW_DIALOGUE  |132        |133        |RIGHT  |0      |HUM_MINE_2_1|When a building is still under construction, damage is doubled. So this time we should deal 8 damage instead of 4.
+@SHOW_DIALOGUE  |133        |1000       |LEFT   |1      |FACE_2 |Let's put that to test.
+
+// action       groupID eventID eventState
+@SET_EVENT_STATE|133    |14     |1
+// event                eventID groupID     playerId    bld attackerId
+!ON_BUILDING_ATTACKED   |14     |140        |-1         |-1 |-1
+
+// action       groupID x   y   L1  L2  L3  Move    Continent
+@UPDATE_WORLD   |140    |34 |1  |   |   |   |0      |
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |140        |141        |LEFT   |0      |FACE_2 |Ouch! Note, the bar over unfinished buildings represents the building's state, not the remaining hitpoints.
+@SHOW_DIALOGUE  |141        |142        |LEFT   |0      |FACE_2 |As you hopefully remember, it's possible for units to be on the same tile as the building. But what happens when you attack such tile?
+
+// 10
+// action   groupID x   y
+@CENTER_VIEW|141    |38 |2
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |141    |1          |38 |1  |1
+// action   groupID MP
+@SET_ARMY_MP|141    |2
+// action       groupID playerID  bld state x   y
+@ADD_BUILDING   |141    |2       |7   |1    |38 |2
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |141    |2          |38 |2  |1
+
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |142        |143        |LEFT   |0      |FACE_2 |Unit's are always targeted first. So if an army is defending a building, that army will be attacked first.
+@SHOW_DIALOGUE  |143        |1000       |LEFT   |1      |FACE_2 |Feel free to try it out!
+
+// action       groupID eventID eventState
+@SET_EVENT_STATE|143    |15     |1
+// event        eventID groupID     playerId1   playerId2   winnerId
+!ON_ARMY_BATTLE |15     |150        |-1         |-1         |-1
+
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |150        |151        |LEFT   |0      |FACE_2 |As long as that defending army is alive, you won't be able to attack the building itself.
+@SHOW_DIALOGUE  |151        |152        |LEFT   |0      |FACE_2 |There is one last thing to know about armies. It's called merging.
+
+// 11
+// action   groupID x   y
+@CENTER_VIEW|152    |42 |2
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |152    |1          |42 |1  |1
+// action   groupID MP
+@SET_ARMY_MP|152    |2
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |152    |1          |41 |2  |1
+// action   groupID MP
+@SET_ARMY_MP|152    |2
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |152    |1          |42 |2  |1
+@ADD_ARMY   |152    |1          |43 |2  |1
+// action   groupID MP
+@SET_ARMY_MP|152    |2
+
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |152        |153        |RIGHT  |0      |SELECTION_TILE_MERGE|When one of your armies is next to another of yours, you are able to merge them.
+@SHOW_DIALOGUE  |153        |154        |LEFT   |0      |FACE_2 |The army you want to merge, needs at least one action point, while the target army doesn't need any.
+@SHOW_DIALOGUE  |154        |155        |LEFT   |0      |FACE_2 |Merging an army needs them to reorganize, therefore the target army won't keep any of the action points.
+@SHOW_DIALOGUE  |155        |156        |LEFT   |0      |FACE_2 |This will render that army vulnerable for that turn, so decide carefully when to merge and when not to.
+@SHOW_DIALOGUE  |156        |157        |LEFT   |0      |FACE_2 |Hitpoints on the other hand are added, even if an army is damaged already.
+@SHOW_DIALOGUE  |157        |1000       |LEFT   |1      |FACE_2 |Try it out now.
+
+// action       groupID eventID eventState
+@SET_EVENT_STATE|157    |16     |1
+// action       eventID groupID playerId
+!ON_ARMY_MERGED |16     |160    |-1
+// action       groupID eventID eventState
+@SET_EVENT_STATE|160    |17     |1
+
+// action       eventID groupID playerId
+!ON_ARMY_MERGED |17     |170    |-1
+// action       groupID eventID eventState
+@SET_EVENT_STATE|170    |18     |1
+
+// action       eventID groupID playerId
+!ON_ARMY_MERGED |18     |180    |-1
+
+// action       groupID x   y   L1  L2  L3  Move    Continent
+@UPDATE_WORLD   |180    |42 |2  |   |   |   |0      |
+// action       groupID     Triggers    Type    close   Icon    Text
+@SHOW_DIALOGUE  |180        |181        |LEFT   |0      |FACE_2 |Now your armies are merged. Remember those calculations on damage?
+@SHOW_DIALOGUE  |181        |182        |LEFT   |0      |FACE_2 |You merged 3 armies into another army. Therefore the level of your army is increased by 3.
+@SHOW_DIALOGUE  |182        |183        |LEFT   |0      |FACE_2 |This means the resulting army in our case is level 4, since the target army was level 1.
+@SHOW_DIALOGUE  |183        |184        |LEFT   |0      |FACE_2 |The base damage of that army is now 4 * 2, so 8 instead of 2.
+@SHOW_DIALOGUE  |184        |185        |LEFT   |0      |FACE_2 |Hitpoints are all added up, but the base hitpoints also increase to 4 * 3, so 12 instead of 3.
+@SHOW_DIALOGUE  |185        |186        |LEFT   |0      |FACE_2 |Action points are not added up.
+
+// Calculation:
+//  3x 2 = 6
+//  Min HP = 5 => Level 3 => Max Damage 6/3
+//12
+// action   groupID x   y
+@CENTER_VIEW|186    |46 |2
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |186    |1          |46 |1  |1
+// action   groupID MP
+@SET_ARMY_MP|186    |2
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |186    |1          |45 |2  |1
+// action   groupID MP
+@SET_ARMY_MP|186    |2
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |186    |2          |46 |2  |3
+// action   groupID HP
+@SET_ARMY_HP|186    |5
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |186    |1          |47 |2  |1
+// action   groupID MP
+@SET_ARMY_MP|186    |2
+
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |186        |187        |LEFT   |0      |FACE_2 |What is the benefit of merging armies if all values are just added up? Let's take a look at an example.
+@SHOW_DIALOGUE  |187        |1000       |LEFT   |1      |FACE_2 |Attack that hostile army, which is level 3 and has 5 hitpoints with your armies.
+
+// action       groupID eventID eventState
+@SET_EVENT_STATE|187    |19     |1
+// event        eventID groupID     playerId1   playerId2   winnerId
+!ON_ARMY_BATTLE |19     |190        |-1         |-1         |-1
+
+// action       groupID eventID eventState
+@SET_EVENT_STATE|190    |20     |1
+// event        eventID groupID     playerId1   playerId2   winnerId
+!ON_ARMY_BATTLE |20     |200        |-1         |-1         |-1
+
+// action       groupID eventID eventState
+@SET_EVENT_STATE|200    |21     |1
+// event        eventID groupID     playerId1   playerId2   winnerId
+!ON_ARMY_BATTLE |21     |210        |-1         |-1         |-1
+
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |210        |211        |LEFT   |0      |FACE_2 |See, you lost all your armies.
+@SHOW_DIALOGUE  |211        |212        |LEFT   |0      |FACE_2 |But what would happen if the armies would have been merged first?
+
+//13
+// action   groupID x   y
+@CENTER_VIEW|212    |50 |2
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |212    |1          |49 |2  |1
+// action   groupID MP
+@SET_ARMY_MP|212    |2
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |212    |1          |50 |2  |1
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |212    |1          |51 |2  |1
+// action   groupID MP
+@SET_ARMY_MP|212    |2
+// action   groupID playerID    x   y   level
+@ADD_ARMY   |212    |2          |50 |3  |1
+
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |212        |1000       |LEFT   |1      |FACE_2 |Now merge all armies into the central army.
+
+// action       groupID eventID eventState
+@SET_EVENT_STATE|212    |22     |1
+// action       eventID groupID playerId
+!ON_ARMY_MERGED |22     |220    |-1
+// action       groupID eventID eventState
+@SET_EVENT_STATE|220    |23     |1
+
+// should be 230, but 240 since event 24 was wrong
+// action       eventID groupID playerId
+!ON_ARMY_MERGED |23     |240    |-1
+// action       groupID eventID eventState
+// TODO: only 2 merge events, not 3
+//@SET_EVENT_STATE|240    |24     |1
+
+// action       eventID groupID playerId
+//!ON_ARMY_MERGED |24     |240    |-1
+
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |240        |241        |LEFT   |0      |FACE_2 |All armies are merged. Hopefully you remember the thing about action points?
+@SHOW_DIALOGUE  |241        |242        |LEFT   |0      |FACE_2 |The target army won't have any. There is only one option to obtain action points for an army.
+@SHOW_DIALOGUE  |242        |1000       |LEFT   |1      |FACE_2 |You need to end the day.
+
+//action            groupID allow
+@SET_ALLOW_DAY      |242    |1
+// action       groupID x   y   L1  L2  L3  Move    Continent
+@UPDATE_WORLD   |242    |50 |2  |   |   |   |4      |
+
+// action   eventID groupID round
+!ON_ROUND   |25     |250    |2
+// recenter, since at game start
+// action   groupID x   y
+@CENTER_VIEW|250    |50 |2
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |250        |251        |LEFT   |0      |FACE_2 |Now you have the same amount of armies used, but they are merged.
+@SHOW_DIALOGUE  |251        |252        |LEFT   |0      |FACE_2 |Attack the hostile army again and see what happens.
+@SHOW_DIALOGUE  |252        |253        |LEFT   |0      |FACE_2 |Think about what will happen. \n Hitpoints: You 6     Hostile 6 \n Damage   : You 6     Hostile 6 \n Defend   : you 3     Hostile 3
+@SHOW_DIALOGUE  |253        |254        |LEFT   |0      |FACE_2 |You will attack the army and deal 6 damage, defeating it. But it will also deal 3 damage defending, leaving your army alive!
+@SHOW_DIALOGUE  |254        |1000       |LEFT   |1      |FACE_2 |Try it out now. I blocked any other movement than attacking.
+
+// action       groupID eventID eventState
+@SET_EVENT_STATE|254    |26     |1
+// event        eventID groupID     playerId1   playerId2   winnerId
+!ON_ARMY_BATTLE |26     |260        |-1         |-1         |-1
+
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |260        |261        |LEFT   |0      |FACE_2 |That's it. Now you know all the basics about commanding armies.
+@SHOW_DIALOGUE  |261        |262        |LEFT   |1      |FACE_2 |As always, only practice will teach you all the small details you need to keep in mind.
+// action       groupID
+@GAME_WIN       |262

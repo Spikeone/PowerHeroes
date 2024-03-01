@@ -1,0 +1,187 @@
+// This changes settings of the game
+// event        eventID     groupID
+!ON_LOAD_MAP    |0          |0
+// action   groupID     state
+@SET_FOW    |0          |1
+
+// event    eventID     groupID
+!ON_START   |1          |1
+// action       groupID eventId state
+@SET_EVENT_STATE|1      |8      |0
+@SET_EVENT_STATE|1      |9      |0
+
+//action                groupID player  building    allow
+//HUM_HOUSE
+@SET_ALLOW_BUILDING     |1      |1      |1          |0
+//HUM_FARM
+@SET_ALLOW_BUILDING     |1      |1      |2          |0
+//HUM_FIELD
+@SET_ALLOW_BUILDING     |1      |1      |3          |0
+//HUM_MINE
+//@SET_ALLOW_BUILDING   |1      |1      |4          |0
+//HUM_SAWMILL
+@SET_ALLOW_BUILDING     |1      |1      |5          |0
+//HUM_BARRACKS
+@SET_ALLOW_BUILDING     |1      |1      |6          |0
+//HUM_TOWER
+@SET_ALLOW_BUILDING     |1      |1      |7          |0
+//action            groupID allow
+@SET_ALLOW_DAY      |1      |0
+
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |1          |2          |LEFT  |0      |FACE_2  |Welcome to the tutorial! \n \n In this tutorial, you will learn the basics about the game and most buildings.
+// action       groupID     Trigggers   Type   close   Icon         Text
+@SHOW_DIALOGUE  |2          |3          |RIGHT |0      |HUM_HQ_1_0  |This is your Headquarter. You will always start with one, except in campaigns. If you lose your Headquarter, you lose the game as well. It's also not possible to rebuild a lost Headquarter.
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |3          |4          |LEFT  |0      |FACE_2  |But let's get started with building!
+// action       groupID     Trigggers   Type   close   Icon         Text
+@SHOW_DIALOGUE  |4          |5          |RIGHT |0      |ICON_BUILD  |To Start building, click on the hammer icon in the upper right corner to select a building for construction.
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |5          |6          |LEFT  |0      |FACE_2  |There are multiple buildings you could build. Don't worry, I will cover most of them in this tutorial and some in later tutorials. Let's start with a mine.
+// action       groupID     Trigggers   Type   close   Icon         Text
+@SHOW_DIALOGUE  |6          |7          |RIGHT |0      |HUM_MINE_1_0|The Mine: \n \n A mine produces gold.
+// action       groupID     Trigggers   Type   close   Icon         Text
+@SHOW_DIALOGUE  |7          |8          |RIGHT |0      |OBJ_GOLD_01|The Mine: \n \n Mines can only be built directly next to gold spots.
+// action       groupID     Trigggers   Type   close   Icon                     Text
+@SHOW_DIALOGUE  |8          |9          |RIGHT |0      |SELECTION_TILE_INVALID  |After you have selected a building, your cursor indicates whether you are able to build or not. If the cursor turns red, you are not able to build.
+// action       groupID     Trigggers   Type   close   Icon                     Text
+@SHOW_DIALOGUE  |9          |10         |RIGHT |0      |SELECTION_TILE_VALID    |If the currently selected tile is valid, left click to build the building at that spot.
+// action       groupID     Trigggers   Type   close   Icon    Text
+@SHOW_DIALOGUE  |10         |11         |LEFT  |1      |FACE_2  |Now it's your turn: try to build a mine. \n \n Task: Build 1 mine.
+
+// event            eventID groupID playerID    buildingID
+!ON_BUILDING_PLACED |2     |20     |1          |4
+// action       groupID eventId state
+@SET_EVENT_STATE|20     |8      |1
+
+// action       groupID     Trigggers   Type    close   Icon            Text
+@SHOW_DIALOGUE  |20         |21         |LEFT   |0      |FACE_2         |Great!
+// action       groupID     Trigggers   Type    close   Icon            Text
+@SHOW_DIALOGUE  |21         |22         |RIGHT  |0      |HUM_MINE_1_1   |Your building won't be finished immediately. Each day (round), the construction of the building will progress. On completion, the mine will start extracting resources!
+// action       groupID     Trigggers   Type    close   Icon            Text
+@SHOW_DIALOGUE  |22         |23         |LEFT   |0      |FACE_2         |Since it's getting late, we should end this day, don't you agree?
+// action       groupID     Trigggers   Type    close   Icon            Text
+@SHOW_DIALOGUE  |23         |24         |RIGHT  |1      |ICON_HOURGLAS  |To end the day, click on the button with a hourglass. Be aware, you won't be able to take any actions after clicking the button - nor is there any confirmation required.
+
+//action            groupID allow
+@SET_ALLOW_DAY      |24     |1
+
+// event    eventID     groupID roundNr
+!ON_ROUND   |3          |30     |2
+
+//action        groupID allow
+@SET_ALLOW_DAY  |30     |0
+// action       groupID     Trigggers   Type    close   Icon    Text
+@SHOW_DIALOGUE  |30         |31         |LEFT    |0      |FACE_2 |Now the building bar of your mine has filled slightly. Some buildings are built faster than others. Next, we should build a sawmill.
+// action       groupID     Trigggers   Type   close   Icon             Text
+@SHOW_DIALOGUE  |31         |32         |RIGHT |0      |HUM_SAWMILL_1_0|The Sawmill: \n \n A Sawmill produces wood.
+// action       groupID     Trigggers   Type   close   Icon         Text
+@SHOW_DIALOGUE  |32         |33         |RIGHT |0      |OBJ_TREE_02|It's only possible to build sawmills directly next to a tree ...
+// action       groupID     Trigggers   Type   close   Icon         Text
+@SHOW_DIALOGUE  |33         |34         |RIGHT |0      |OBJ_TREE_01|... or some trees ...
+// action       groupID     Trigggers   Type   close   Icon         Text
+@SHOW_DIALOGUE  |34         |35         |RIGHT |0      |OBJ_TREE_03|... or a forest ...
+// action       groupID     Trigggers   Type   close   Icon         Text
+@SHOW_DIALOGUE  |35         |36         |RIGHT |0      |OBJ_BUSH_03|... but not bushes!
+// action       groupID     Trigggers   Type   close   Icon    Text
+@SHOW_DIALOGUE  |36         |37         |LEFT  |1      |FACE_2  |Now build a sawmill anywhere. \n \n Task: Build 1 sawmill.
+
+//action            groupID allow
+@SET_ALLOW_DAY      |37     |0
+//action            groupID player  building    allow
+@SET_ALLOW_BUILDING |37     |1      |5          |1
+
+// event            eventID groupID playerID    buildingID
+!ON_BUILDING_PLACED |4     |40     |1          |5
+// action       groupID eventId state
+@SET_EVENT_STATE|40     |9      |1
+
+// action       groupID     Trigggers   Type    close   Icon            Text
+@SHOW_DIALOGUE  |40         |41         |LEFT   |0      |FACE_2         |Great!
+// action       groupID     Trigggers   Type    close   Icon            Text
+@SHOW_DIALOGUE  |41         |42         |RIGHT  |0      |ICON_BOMB      |You can also destroy buildings. Select a building and click on the bomb icon. Be wary, as you won't receive confirmation prompt or be refunded any resources used to construct this building!
+// action       groupID     Trigggers   Type    close   Icon            Text
+@SHOW_DIALOGUE  |42         |43         |LEFT   |0      |FACE_2         |Please do not destroy any buildings, as we don't have enough resources for rebuilding them.
+// action       groupID     Trigggers   Type    close   Icon            Text
+@SHOW_DIALOGUE  |43         |44         |RIGHT  |1      |ICON_HOURGLAS  |Continue until the construction of the mine is completed.
+
+//action            groupID allow
+@SET_ALLOW_DAY      |44     |1
+
+// event            eventID     groupID playerID    typeID  count   done    sites
+!ON_BUILDING_COUNT  |5          |50     |1          |4      |1      |1      |0
+// action       groupID     Trigggers   Type    close   Icon                    Text
+@SHOW_DIALOGUE  |50         |51         |LEFT   |0      |FACE_2                 |Now that your mine is finished, let's talk about production and resources.
+@SHOW_DIALOGUE  |51         |52         |RIGHT  |0      |HUM_MINE_1_0           |Every building generates resources. The mine for example produces gold.
+@SHOW_DIALOGUE  |52         |53         |RIGHT  |0      |HUM_HQ_1_0             |The only special building is the HQ, which increases any resource by four units.
+@SHOW_DIALOGUE  |53         |54         |LEFT   |0      |FACE_2                 |But let's have a look at all resources, shall we?
+@SHOW_DIALOGUE  |54         |55         |RIGHT  |0      |ICON_WOOD              |Wood \n \n Use: Building \n \n Production: Sawmill (+6) or Headquarter (+4)
+@SHOW_DIALOGUE  |55         |56         |RIGHT  |0      |ICON_GOLDCOIN          |Gold \n \n Use: Building and recruiting \n \n Production: Mine (+8) or Headquarter (+4)
+@SHOW_DIALOGUE  |56         |57         |RIGHT  |0      |ICON_FOOD              |Food \n \n Use: Recruiting \n \n Production: Field (+2) or Headquarter (+4)
+@SHOW_DIALOGUE  |57         |58         |RIGHT  |0      |ICON_PEOPLE            |People \n \n Use: Army upkeep \n \n Production: House (+4) or Headquarter (+4)
+@SHOW_DIALOGUE  |58         |59         |LEFT   |0      |FACE_2                 |Beware, people do not work like the other resources. There is no way to store them, you rather create space. If an army is destroyed, those people are available for new armies. But we will cover that later.
+@SHOW_DIALOGUE  |59         |60         |RIGHT  |0      |ICON_WARES             |You may have noticed already, but you can always check your production when clicking on the chest icon.
+@SHOW_DIALOGUE  |60         |61         |RIGHT  |0      |GROUND_GREEN_04        |Maybe you already noticed it, but there are several lushly tiles around your Headquarter.
+@SHOW_DIALOGUE  |61         |62         |RIGHT  |0      |FOW_GROUND_EMPTY_01    |While some other tiles are looking dull.
+@SHOW_DIALOGUE  |62         |63         |RIGHT  |0      |FOW_OBJ_TREE_01        |Or show objects rather schematic.
+@SHOW_DIALOGUE  |63         |64         |LEFT   |0      |FACE_2                 |This is caused by something called fog of war (or fow). Any Headquarter or tower for that matter overlooks the surrounding three tiles in each direction. You are only allowed to build on explored tiles.
+@SHOW_DIALOGUE  |64         |65         |LEFT   |0      |FACE_2                 |In freeplay and multiplayer mode, you may disable fog of war, but the limitation imposed on building still applies. Also keep in mind that a tile - once visible - stays visible, even when a nearby tower gets destroyed.
+@SHOW_DIALOGUE  |65         |66         |RIGHT  |0      |HUM_TOWER_1_0          |The tower allows you to build buildings in it's surrounding, just like the Headquarter. But unlike the Headquarter it doesn't produce any resources nor do you lose when losing a tower.
+@SHOW_DIALOGUE  |66         |67         |LEFT   |0      |FACE_2                 |When selecting the building spot, keep the three tile range in mind and decide weather a spot yields better new tiles than another.
+@SHOW_DIALOGUE  |67         |68         |RIGHT  |1      |SELECTION_TILE_GREEN   |Build a tower at the marked spot. All other spots have been disabled for now.
+
+// action       groupID x   y   graphic
+@SET_OVERLAY    |68     |6  |3  |SELECTION_TILE_GREEN
+// action       groupID x   y   L1  L2  L3  Move    Continent
+@UPDATE_WORLD   |68     |3  |3  |   |   |16 |       |
+@UPDATE_WORLD   |68     |4  |3  |   |   |16 |       |
+@UPDATE_WORLD   |68     |5  |3  |   |   |16 |       |
+@UPDATE_WORLD   |68     |3  |4  |   |   |16 |       |
+@UPDATE_WORLD   |68     |4  |4  |   |   |16 |       |
+@UPDATE_WORLD   |68     |5  |4  |   |   |16 |       |
+//action                groupID player  building    allow
+@SET_ALLOW_BUILDING     |68      |1     |7          |1
+//action            groupID allow
+@SET_ALLOW_DAY      |68     |0
+// event            eventID groupID playerID    buildingID
+!ON_BUILDING_PLACED |7     |70     |1          |7
+
+// action       groupID x   y   graphic
+@SET_OVERLAY    |70     |6  |3  |
+// action       groupID x   y   L1  L2  L3  Move    Continent
+@UPDATE_WORLD   |70     |3  |3  |   |   |-1 |       |
+@UPDATE_WORLD   |70     |4  |3  |   |   |-1 |       |
+@UPDATE_WORLD   |70     |5  |3  |   |   |-1 |       |
+@UPDATE_WORLD   |70     |3  |4  |   |   |-1 |       |
+@UPDATE_WORLD   |70     |4  |4  |   |   |-1 |       |
+@UPDATE_WORLD   |70     |5  |4  |   |   |-1 |       |
+//action            groupID allow
+@SET_ALLOW_DAY      |70     |1
+
+// action       groupID     Trigggers   Type    close   Icon                    Text
+@SHOW_DIALOGUE  |70         |71         |LEFT   |1      |FACE_2                 |Great, now you know the basics of the game! To win this map you need to have: \n \n Mine: 3x \n Sawmill: 3x
+
+// action       groupID eventId state
+@SET_EVENT_STATE|70     |8      |0
+// action       groupID eventId state
+@SET_EVENT_STATE|70     |9      |0
+
+// WIN Event(s)
+// event            eventID     groupID playerID    typeID  count   done    sites
+!ON_BUILDING_COUNT  |11         |110    |1          |4      |3      |1      |0
+!ON_BUILDING_COUNT  |12         |120    |1          |5      |3      |1      |0
+// event        eventID groupID     eventID1    eventID2
+!ON_EVENTS_MET  |10     |100        |11         |12
+// action       groupID     Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |100        |101        |LEFT   |1      |FACE_2     |That's it, you should now attend the next tutorial mission.
+// action       groupID
+@GAME_WIN       |101
+
+// LOSE Event(s)
+// event            eventID     groupID playerID    typeID  count   done    sites
+!ON_BUILDING_COUNT  |8          |80     |1          |4      |0      |1      |1
+!ON_BUILDING_COUNT  |9          |80     |1          |5      |0      |1      |1
+// action       groupID     Trigggers   Type    close   Icon        Text
+@SHOW_DIALOGUE  |80         |81         |LEFT   |1      |FACE_2     |You couldn't resist, could you?
+// action       groupID
+@GAME_LOSE      |81

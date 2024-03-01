@@ -32,6 +32,11 @@
 // action       groupID     x           y
 @CENTER_VIEW    |2          |0          |12
 
+// action       groupID     x           y       graphic
+@SET_OVERLAY    |2          |1          |7      |SELECTION_TILE_GREEN
+//              groupID state
+@SET_ALLOW_DAY  |2      |0
+
 // action       groupID     Trigggers   Type    close   Icon        Text
 @SHOW_DIALOGUE  |3          |4          |RIGHT  |0      |FACE_2    |Sailor: \n \n Did you hear the bells?
 // action       groupID     soundName
@@ -43,8 +48,11 @@
 // action       groupID     x           y
 @CENTER_VIEW    |3          |0          |17
 
+// action       groupID     x           y       graphic
+@SET_OVERLAY    |3          |1          |7     |
+
 // action       groupID     Trigggers   Type    close   Icon        Text
-@SHOW_DIALOGUE  |4          |5          |LEFT   |0      |FACE_24   |You: \n \n The town is under attack! To arms men!
+@SHOW_DIALOGUE  |4          |5          |LEFT   |0      |HUM_MINE_1_0   |You: \n \n The town is under attack! To arms men!
 // action       groupID     soundName
 @PLAY_SOUND     |4          |SND_KAREN_SHOCK
 // action       groupID     playerId    x   y   r

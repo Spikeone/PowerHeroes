@@ -36,6 +36,9 @@ Base Story:
 - this is more a tactical movement map
 - whenever the player fails, the mission ends with "I should have thought of that!"
 
+2 Dark Path
+
+
 3 Feral Forest 
 - there is a bandit base around
 - Task: Destroy the bandit camp
